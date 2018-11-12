@@ -1,3 +1,14 @@
+<i18n>
+{
+  "en": {
+    "stream": "Stream"
+  },
+  "ru": {
+    "stream": "Поток"
+  }
+}
+</i18n>
+
 <template>
     <v-container>
       <v-layout row>
@@ -8,7 +19,7 @@
             item-value="url"
             v-model="defaultItem"
             @change="onStreamSwitch"
-            label="Stream"
+            :label="stream"
             outline
             return-object
           ></v-select>
@@ -31,6 +42,17 @@ import base64 from "base-64";
 
 export default {
   name: "Home",
+  props: {
+    locale: {
+      type: String,
+      required: true
+    }
+  },
+  computed: {
+    stream() {
+      return this.$t("stream");
+    }
+  },
   data() {
     return {
       defaultItem: {
@@ -90,6 +112,11 @@ export default {
   methods: {
     onStreamSwitch() {
       console.log(this.defaultItem.url);
+    }
+  },
+  watch: {
+    locale(val) {
+      this.$i18n.locale = val;
     }
   }
 };

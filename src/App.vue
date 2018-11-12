@@ -2,11 +2,26 @@
 {
   "en": {
     "english": "English",
-    "russian": "Russian"
+    "russian": "Russian",
+    "live": "Live",
+    "login": "Login",
+    "records": "Records",
+    "events": "Events",
+    "close": "Close",
+    "snapshot": "Snapshot",
+    "sync_time": "Sync time"
+
   },
   "ru": {
     "english": "Английский",
-    "russian": "Русский"
+    "russian": "Русский",
+    "live": "Реальное видео",
+    "login": "Вход",
+    "records": "Архив",
+    "events": "События",
+    "close": "Закрыть",
+    "snapshot": "Стопкадр",
+    "sync_time": "Синхр. времени"
   }
 }
 </i18n>
@@ -52,7 +67,7 @@
           <v-list-tile-action>
             <v-icon color="pink">exit_to_app</v-icon>
           </v-list-tile-action>
-          <v-list-tile-content>Close</v-list-tile-content>
+          <v-list-tile-content>{{ $t("close") }}</v-list-tile-content>
         </v-list-tile>
       </v-list>
       <v-divider></v-divider>
@@ -144,46 +159,50 @@ export default {
           locale: "ru"
         }
       ];
+    },
+    links() {
+      return [
+        {
+          icon: "movie",
+          title: this.$t("live"),
+          url: "/"
+        },
+        {
+          icon: "lock",
+          title: this.$t("login"),
+          url: "/auth/login"
+        },
+        {
+          icon: "save",
+          title: this.$t("records"),
+          url: "/records"
+        },
+        {
+          icon: "event",
+          title: this.$t("events"),
+          url: "/events"
+        }
+      ];
+    },
+    commands() {
+      return [
+        {
+          icon: "photo_camera",
+          title: this.$t("snapshot"),
+          method: this.onSnapshot
+        },
+        {
+          icon: "sync",
+          title: this.$t("sync_time"),
+          method: this.onSyncTime
+        }
+      ];
     }
   },
   data() {
     return {
       drawer: false,
-      currentLang: "",
-      links: [
-        {
-          icon: "movie",
-          title: "Live",
-          url: "/"
-        },
-        {
-          icon: "lock",
-          title: "Login",
-          url: "/auth/login"
-        },
-        {
-          icon: "save",
-          title: "Records",
-          url: "/records"
-        },
-        {
-          icon: "event",
-          title: "Events",
-          url: "/events"
-        }
-      ],
-      commands: [
-        {
-          icon: "photo_camera",
-          title: "Snapshot",
-          method: this.onSnapshot
-        },
-        {
-          icon: "sync",
-          title: "Sync time",
-          method: this.onSyncTime
-        }
-      ]
+      currentLang: ""
     };
   },
   methods: {
