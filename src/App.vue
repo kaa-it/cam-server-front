@@ -124,92 +124,91 @@
 </template>
 
 <script>
-import Settings from '@/components/Settings/Settings'
+import Settings from "@/components/Settings/Settings";
+
 export default {
   components: {
     Settings
   },
   computed: {
-    langs () {
+    langs() {
       return [
         {
-          name: this.$t('english'),
-          image: 'static/images/us.png',
-          locale: 'en'
+          name: this.$t("english"),
+          image: "static/images/us.png",
+          locale: "en"
         },
         {
-          name: this.$t('russian'),
-          image: 'static/images/ru.png',
-          locale: 'ru'
+          name: this.$t("russian"),
+          image: "static/images/ru.png",
+          locale: "ru"
         }
-      ]
+      ];
     }
   },
-  data () {
+  data() {
     return {
       drawer: false,
-      currentLang: '',
+      currentLang: "",
       links: [
         {
-          icon: 'movie',
-          title: 'Live',
-          url: '/'
+          icon: "movie",
+          title: "Live",
+          url: "/"
         },
         {
-          icon: 'lock',
-          title: 'Login',
-          url: '/auth/login'
+          icon: "lock",
+          title: "Login",
+          url: "/auth/login"
         },
         {
-          icon: 'save',
-          title: 'Records',
-          url: '/records'
+          icon: "save",
+          title: "Records",
+          url: "/records"
         },
         {
-          icon: 'event',
-          title: 'Events',
-          url: '/events'
+          icon: "event",
+          title: "Events",
+          url: "/events"
         }
       ],
       commands: [
         {
-          icon: 'photo_camera',
-          title: 'Snapshot',
+          icon: "photo_camera",
+          title: "Snapshot",
           method: this.onSnapshot
         },
         {
-          icon: 'sync',
-          title: 'Sync time',
+          icon: "sync",
+          title: "Sync time",
           method: this.onSyncTime
         }
       ]
-    }
+    };
   },
   methods: {
-    onLangSelected (lang) {
-      this.currentLang = lang.image
-      this.$i18n.locale = lang.locale
+    onLangSelected(lang) {
+      this.currentLang = lang.image;
+      this.$i18n.locale = lang.locale;
     },
 
-    onSnapshot () {
-      console.log('onSnapshot')
+    onSnapshot() {
+      console.log("onSnapshot");
     },
 
-    onSyncTime () {
-      console.log('onSyncTime')
+    onSyncTime() {
+      console.log("onSyncTime");
     }
   },
-  created () {
-    this.currentLang = this.langs[0].image
-    this.$i18n.locale = 'en'
-    console.log(this.$i18n.messages)
-    console.log(this.$t('russian'))
+  created() {
+    this.currentLang = this.langs[0].image;
+    this.$i18n.locale = "en";
   }
-}
+};
 </script>
 
 <style scoped>
-  .pointer {
-    cursor: pointer
-  }
+.pointer {
+  cursor: pointer;
+}
 </style>

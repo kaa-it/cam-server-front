@@ -39,33 +39,30 @@
 </template>
 
 <script>
-  export default {
-    name: 'Login',
-    data () {
-      return {
-        login: '',
-        password: '',
-        valid: false,
-        nameRules: [
-          v => !!v || 'Login is required'
-        ]
-      }
-    },
-    methods: {
-      onSubmit () {
-        if (this.$refs.form.validate()) {
-          const user = {
-            login: this.login,
-            password: this.password
-          }
+export default {
+  name: "Login",
+  data() {
+    return {
+      login: "",
+      password: "",
+      valid: false,
+      nameRules: [v => !!v || "Login is required"]
+    };
+  },
+  methods: {
+    onSubmit() {
+      if (this.$refs.form.validate()) {
+        const user = {
+          login: this.login,
+          password: this.password
+        };
 
-          console.log(user)
-        }
+        console.log(user);
       }
     }
   }
+};
 </script>
 
 <style scoped>
-
 </style>
