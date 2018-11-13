@@ -43,7 +43,7 @@ export default {
                 {
                   name: "Image",
                   icon: "settings_brightness",
-                  url: "/settings/media/image"
+                  url: "settings/media/image"
                 },
                 {
                   name: "Video encoder 1",
@@ -68,7 +68,7 @@ export default {
                 {
                   name: "OSD",
                   icon: "video_label",
-                  url: "/settings/media/osd"
+                  url: "settings/media/osd"
                 }
               ]
             },
@@ -79,24 +79,29 @@ export default {
                 {
                   name: "Motion detection",
                   icon: "directions_run",
-                  url: "/settings/analytics/motion_detection"
+                  url: "settings/analytics/motion_detection"
                 }
               ]
             },
             {
+              name: "Inputs/Outputs",
+              icon: "device_hub",
+              url: "settings/io"
+            },
+            {
               name: "Alarms",
               icon: "alarm",
-              url: "/settings/alarms"
+              url: "settings/alarms"
             },
             {
               name: "Record",
               icon: "save",
-              url: "/settings/record"
+              url: "settings/record"
             },
             {
               name: "Cloud",
               icon: "cloud",
-              url: "/settings/cloud"
+              url: "settings/cloud"
             },
             {
               name: "Network",
@@ -105,17 +110,17 @@ export default {
                 {
                   name: "Local",
                   icon: "settings_ethernet",
-                  url: "/settings/network/ethernet"
+                  url: "settings/network/ethernet"
                 },
                 {
                   name: "FTP",
                   icon: "folder_shared",
-                  url: "/settings/network/ftp"
+                  url: "settings/network/ftp"
                 },
                 {
                   name: "SMTP",
                   icon: "email",
-                  url: "/settings/network/smtp"
+                  url: "settings/network/smtp"
                 }
               ]
             },
@@ -126,22 +131,22 @@ export default {
                 {
                   name: "Identification",
                   icon: "info",
-                  url: "/settings/system/identification"
+                  url: "settings/system/identification"
                 },
                 {
                   name: "User management",
                   icon: "perm_identity",
-                  url: "/settings/system/user_management"
+                  url: "settings/system/user_management"
                 },
                 {
                   name: "Time settings",
                   icon: "access_time",
-                  url: "/settings/system/time_settings"
+                  url: "settings/system/time_settings"
                 },
                 {
                   name: "Disk management",
                   icon: "sim_card",
-                  url: "/settings/system/disk_management"
+                  url: "settings/system/disk_management"
                 },
                 {
                   name: "Maintenance",
@@ -151,7 +156,7 @@ export default {
                 {
                   name: "Camera log",
                   icon: "list_alt",
-                  url: "/settings/system/log"
+                  url: "settings/system/log"
                 }
               ]
             }
@@ -166,9 +171,11 @@ export default {
       const selectedItem = this.findItem(this.items[0], newVal[0]);
       if (!selectedItem) return;
       if (selectedItem.streamId) {
-        this.$router.push("/settings/media/encoder/" + selectedItem.streamId);
+        this.$router.push(
+          this.uri("settings/media/encoder/") + selectedItem.streamId
+        );
       } else if (selectedItem.url) {
-        this.$router.push(selectedItem.url);
+        this.$router.push(this.uri(selectedItem.url));
       }
     }
   },
