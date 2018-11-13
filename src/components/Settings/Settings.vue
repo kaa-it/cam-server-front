@@ -22,15 +22,18 @@
 </template>
 
 <script>
+import LocalizeUriMixin from "@/components/Locale/LocalizeUriMixin";
+
 export default {
   name: "Settings",
+  mixins: [LocalizeUriMixin],
   data() {
     return {
       active: [],
       open: ["Settings"],
       items: [
         {
-          name: "Settings",
+          name: this.$t("toolbar.settings"),
           icon: "settings",
           children: [
             {

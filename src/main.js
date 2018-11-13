@@ -3,15 +3,15 @@ import App from "./App";
 import router from "./router";
 import Vuetify from "vuetify";
 import "vuetify/dist/vuetify.min.css";
-import VueI18n from "vue-i18n";
+import { i18n } from "@/locale/i18n";
 
 Vue.use(Vuetify);
-Vue.use(VueI18n);
 
 Vue.config.productionTip = false;
 
 /* eslint-disable no-new */
 new Vue({
-  render: h => h(App),
-  router
+  router,
+  i18n,
+  render: h => h(App)
 }).$mount("#app");

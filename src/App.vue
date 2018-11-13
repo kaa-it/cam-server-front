@@ -1,31 +1,3 @@
-<i18n>
-{
-  "en": {
-    "english": "English",
-    "russian": "Russian",
-    "live": "Live",
-    "login": "Login",
-    "records": "Records",
-    "events": "Events",
-    "close": "Close",
-    "snapshot": "Snapshot",
-    "sync_time": "Sync time"
-
-  },
-  "ru": {
-    "english": "Английский",
-    "russian": "Русский",
-    "live": "Реальное видео",
-    "login": "Вход",
-    "records": "Архив",
-    "events": "События",
-    "close": "Закрыть",
-    "snapshot": "Стопкадр",
-    "sync_time": "Синхр. времени"
-  }
-}
-</i18n>
-
 <template>
   <v-app>
     <v-navigation-drawer
@@ -67,7 +39,7 @@
           <v-list-tile-action>
             <v-icon color="pink">exit_to_app</v-icon>
           </v-list-tile-action>
-          <v-list-tile-content>{{ $t("close") }}</v-list-tile-content>
+          <v-list-tile-content>{{ $t("toolbar.close") }}</v-list-tile-content>
         </v-list-tile>
       </v-list>
       <v-divider></v-divider>
@@ -83,26 +55,7 @@
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items>
-        <v-menu offset-y>
-          <v-btn slot="activator" flat>
-            <v-img :src="currentLang" height="26px" contain></v-img>
-          </v-btn>
-
-          <v-list>
-            <v-list-tile
-              v-for="lang in langs"
-              :key="lang.name"
-              @click="onLangSelected(lang)"
-            >
-              <v-list-tile-action>
-                <v-img :src="lang.image" height="26px" contain></v-img>
-              </v-list-tile-action>
-              <v-list-tile-content>
-                <v-list-tile-title>{{ lang.name }}</v-list-tile-title>
-              </v-list-tile-content>  
-            </v-list-tile>
-          </v-list>
-        </v-menu>
+        <LocaleSwitcher/>
       </v-toolbar-items> 
       <v-toolbar-items class="hidden-sm-and-down">
         <v-btn
@@ -118,7 +71,7 @@
           flat
           @click="drawer = !drawer">
           <v-icon left>settings</v-icon>
-          Settings
+          {{ $t("toolbar.settings") }}
         </v-btn>
         <v-btn
           v-for="command in commands"
@@ -140,47 +93,37 @@
 
 <script>
 import Settings from "@/components/Settings/Settings";
+import LocaleSwitcher from "@/components/Locale/LocaleSwitcher";
+import LocalizeUriMixin from "@/components/Locale/LocalizeUriMixin";
 
 export default {
+  mixins: [LocalizeUriMixin],
   components: {
-    Settings
+    Settings,
+    LocaleSwitcher
   },
   computed: {
-    langs() {
-      return [
-        {
-          name: this.$t("english"),
-          image: "static/images/us.png",
-          locale: "en"
-        },
-        {
-          name: this.$t("russian"),
-          image: "static/images/ru.png",
-          locale: "ru"
-        }
-      ];
-    },
     links() {
       return [
         {
           icon: "movie",
-          title: this.$t("live"),
-          url: "/"
+          title: this.$t("toolbar.live"),
+          url: this.uri("/")
         },
         {
           icon: "lock",
-          title: this.$t("login"),
-          url: "/auth/login"
+          title: this.$t("toolbar.login"),
+          url: this.uri("auth/login")
         },
         {
           icon: "save",
-          title: this.$t("records"),
-          url: "/records"
+          title: this.$t("toolbar.records"),
+          url: this.uri("records")
         },
         {
           icon: "event",
-          title: this.$t("events"),
-          url: "/events"
+          title: this.$t("toolbar.events"),
+          url: this.uri("events")
         }
       ];
     },
@@ -188,12 +131,12 @@ export default {
       return [
         {
           icon: "photo_camera",
-          title: this.$t("snapshot"),
+          title: this.$t("toolbar.snapshot"),
           method: this.onSnapshot
         },
         {
           icon: "sync",
-          title: this.$t("sync_time"),
+          title: this.$t("toolbar.sync_time"),
           method: this.onSyncTime
         }
       ];
@@ -201,16 +144,10 @@ export default {
   },
   data() {
     return {
-      drawer: false,
-      currentLang: ""
+      drawer: false
     };
   },
   methods: {
-    onLangSelected(lang) {
-      this.currentLang = lang.image;
-      this.$i18n.locale = lang.locale;
-    },
-
     onSnapshot() {
       console.log("onSnapshot");
     },
@@ -218,10 +155,6 @@ export default {
     onSyncTime() {
       console.log("onSyncTime");
     }
-  },
-  created() {
-    this.currentLang = this.langs[0].image;
-    this.$i18n.locale = "en";
   }
 };
 </script>

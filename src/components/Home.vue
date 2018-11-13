@@ -1,14 +1,3 @@
-<i18n>
-{
-  "en": {
-    "stream": "Stream"
-  },
-  "ru": {
-    "stream": "Поток"
-  }
-}
-</i18n>
-
 <template>
     <v-container>
       <v-layout row>
@@ -19,7 +8,7 @@
             item-value="url"
             v-model="defaultItem"
             @change="onStreamSwitch"
-            :label="stream"
+            :label="$t('home.stream')"
             outline
             return-object
           ></v-select>
@@ -42,39 +31,28 @@ import base64 from "base-64";
 
 export default {
   name: "Home",
-  props: {
-    locale: {
-      type: String,
-      required: true
-    }
-  },
-  computed: {
-    stream() {
-      return this.$t("stream");
-    }
-  },
   data() {
     return {
       defaultItem: {
         name: "H.264 (1920x1080)",
-        url: "rtsp://192.168.11.235/Streaming/channels/1"
+        url: "rtsp://192.168.11.35/Streaming/channels/1"
       },
       items: [
         {
           name: "H.264 (1920x1080)",
-          url: "rtsp://192.168.11.235/Streaming/channels/1"
+          url: "rtsp://192.168.11.35/Streaming/channels/1"
         },
         {
           name: "H.264 (720x400)",
-          url: "rtsp://192.168.11.235/Streaming/channels/2"
+          url: "rtsp://192.168.11.35/Streaming/channels/2"
         },
         {
           name: "H.264 (384x216)",
-          url: "rtsp://192.168.11.235/Streaming/channels/3"
+          url: "rtsp://192.168.11.35/Streaming/channels/3"
         },
         {
           name: "H.265 (384x216)",
-          url: "rtsp://192.168.11.235/Streaming/channels/4"
+          url: "rtsp://192.168.11.35/Streaming/channels/4"
         }
       ],
       player: null
@@ -82,7 +60,7 @@ export default {
   },
   mounted() {
     try {
-      const url = "http://192.168.11.235:8088/start0.mpd";
+      const url = "http://192.168.11.35:8088/start0.mpd";
 
       this.player = dashjs.MediaPlayer().create();
 
@@ -112,11 +90,6 @@ export default {
   methods: {
     onStreamSwitch() {
       console.log(this.defaultItem.url);
-    }
-  },
-  watch: {
-    locale(val) {
-      this.$i18n.locale = val;
     }
   }
 };
