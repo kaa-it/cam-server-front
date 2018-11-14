@@ -2,7 +2,7 @@
   <v-container>
     <v-layout row>
       <v-flex xs12>
-        <h1>Disk Management</h1>
+        <h1>{{ $t("disk_management.title") }}</h1>
       </v-flex>
     </v-layout>
   </v-container>

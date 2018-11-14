@@ -2,7 +2,7 @@
   <v-container>
     <v-layout row>
       <v-flex xs12>
-        <h1>Image Settings</h1>
+        <h1>{{ $t("image.title") }}</h1>
       </v-flex>
     </v-layout>
   </v-container>

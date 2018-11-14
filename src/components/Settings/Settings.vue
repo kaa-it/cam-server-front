@@ -7,7 +7,8 @@
           :items="items"
           :active.sync="active"
           activatable
-          item-key="name"
+          active-class="primary--text"
+          item-key="id"
           open-on-click
         >
           <template slot="prepend" slot-scope="{ item }">
@@ -27,134 +28,169 @@ import LocalizeUriMixin from "@/components/Locale/LocalizeUriMixin";
 export default {
   name: "Settings",
   mixins: [LocalizeUriMixin],
-  data() {
-    return {
-      active: [],
-      open: ["Settings"],
-      items: [
+  computed: {
+    items() {
+      return [
         {
+          id: 0,
           name: this.$t("toolbar.settings"),
           icon: "settings",
           children: [
             {
-              name: "Media setup",
+              id: 1,
+              name: this.$t("settings.media"),
               icon: "perm_media",
               children: [
                 {
-                  name: "Image",
+                  id: 11,
+                  name: this.$t("settings.image"),
                   icon: "settings_brightness",
                   url: "settings/media/image"
                 },
                 {
-                  name: "Video encoder 1",
+                  id: 12,
+                  name: this.$t("settings.video_encoder", [1]),
                   icon: "featured_video",
                   streamId: "1"
                 },
                 {
-                  name: "Video encoder 2",
+                  id: 13,
+                  name: this.$t("settings.video_encoder", [2]),
                   icon: "featured_video",
                   streamId: "2"
                 },
                 {
-                  name: "Video encoder 3",
+                  id: 14,
+                  name: this.$t("settings.video_encoder", [3]),
                   icon: "featured_video",
                   streamId: "3"
                 },
                 {
-                  name: "Video encoder 4",
+                  id: 15,
+                  name: this.$t("settings.video_encoder", [4]),
                   icon: "featured_video",
                   streamId: "4"
                 },
                 {
-                  name: "OSD",
+                  id: 16,
+                  name: this.$t("settings.osd"),
                   icon: "video_label",
                   url: "settings/media/osd"
+                },
+                {
+                  id: 17,
+                  name: this.$t("settings.audio_encoder"),
+                  icon: "surround_sound",
+                  url: "settings/media/audio_encoder"
                 }
               ]
             },
             {
-              name: "Analytics",
+              id: 2,
+              name: this.$t("settings.analytics"),
               file: "timeline",
               children: [
                 {
-                  name: "Motion detection",
+                  id: 21,
+                  name: this.$t("settings.motion_detection"),
                   icon: "directions_run",
                   url: "settings/analytics/motion_detection"
+                },
+                {
+                  id: 22,
+                  name: this.$t("settings.sound_detection"),
+                  icon: "hearing",
+                  url: "settings/analytics/sound_detection"
                 }
               ]
             },
             {
-              name: "Inputs/Outputs",
+              id: 3,
+              name: this.$t("settings.io"),
               icon: "device_hub",
               url: "settings/io"
             },
             {
-              name: "Alarms",
+              id: 4,
+              name: this.$t("settings.alarms"),
               icon: "alarm",
               url: "settings/alarms"
             },
             {
-              name: "Record",
+              id: 5,
+              name: this.$t("settings.record"),
               icon: "save",
               url: "settings/record"
             },
             {
-              name: "Cloud",
+              id: 6,
+              name: this.$t("settings.cloud"),
               icon: "cloud",
               url: "settings/cloud"
             },
             {
-              name: "Network",
+              id: 7,
+              name: this.$t("settings.network"),
               icon: "wifi",
               children: [
                 {
-                  name: "Local",
+                  id: 71,
+                  name: this.$t("settings.local"),
                   icon: "settings_ethernet",
                   url: "settings/network/ethernet"
                 },
                 {
-                  name: "FTP",
+                  id: 72,
+                  name: this.$t("settings.ftp"),
                   icon: "folder_shared",
                   url: "settings/network/ftp"
                 },
                 {
-                  name: "SMTP",
+                  id: 73,
+                  name: this.$t("settings.smtp"),
                   icon: "email",
                   url: "settings/network/smtp"
                 }
               ]
             },
             {
-              name: "System",
+              id: 8,
+              name: this.$t("settings.system"),
               icon: "perm_device_information",
               children: [
                 {
-                  name: "Identification",
+                  id: 81,
+                  name: this.$t("settings.identification"),
                   icon: "info",
                   url: "settings/system/identification"
                 },
                 {
-                  name: "User management",
+                  id: 82,
+                  name: this.$t("settings.user_management"),
                   icon: "perm_identity",
                   url: "settings/system/user_management"
                 },
                 {
-                  name: "Time settings",
+                  id: 83,
+                  name: this.$t("settings.time_settings"),
                   icon: "access_time",
                   url: "settings/system/time_settings"
                 },
                 {
-                  name: "Disk management",
+                  id: 84,
+                  name: this.$t("settings.disk_management"),
                   icon: "sim_card",
                   url: "settings/system/disk_management"
                 },
                 {
-                  name: "Maintenance",
+                  id: 85,
+                  name: this.$t("settings.maintenance"),
                   icon: "system_update",
                   url: "/settings/system/maintenance"
                 },
                 {
-                  name: "Camera log",
+                  id: 86,
+                  name: this.$t("settings.camera_log"),
                   icon: "list_alt",
                   url: "settings/system/log"
                 }
@@ -162,17 +198,33 @@ export default {
             }
           ]
         }
-      ]
+      ];
+    }
+  },
+  data() {
+    return {
+      active: [],
+      open: [0]
     };
   },
   watch: {
-    active(newVal) {
-      if (!newVal.length) return;
-      const selectedItem = this.findItem(this.items[0], newVal[0]);
+    active(newVal, oldVal) {
+      if (!newVal.length && !oldVal.length) {
+        return;
+      }
+
+      if (!newVal.length) {
+        this.$router.replace(this.uri("/"));
+        return;
+      }
+
+      const val = newVal[0];
+
+      const selectedItem = this.findItem(this.items[0], val);
       if (!selectedItem) return;
       if (selectedItem.streamId) {
         this.$router.push(
-          this.uri("settings/media/encoder/") + selectedItem.streamId
+          this.uri("settings/media/video_encoder") + "/" + selectedItem.streamId
         );
       } else if (selectedItem.url) {
         this.$router.push(this.uri(selectedItem.url));
@@ -180,13 +232,13 @@ export default {
     }
   },
   methods: {
-    findItem(element, name) {
-      if (element.name === name) {
+    findItem(element, id) {
+      if (element.id === id) {
         return element;
       } else if (element.children != null) {
         let result = null;
         for (let i = 0; result == null && i < element.children.length; i++) {
-          result = this.findItem(element.children[i], name);
+          result = this.findItem(element.children[i], id);
         }
         return result;
       }

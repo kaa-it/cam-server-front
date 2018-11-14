@@ -2,7 +2,7 @@
   <v-container>
     <v-layout row>
       <v-flex xs12>
-        <h1>Date/Time Settings</h1>
+        <h1>{{ $t("time_settings.title") }}</h1>
       </v-flex>
     </v-layout>
   </v-container>

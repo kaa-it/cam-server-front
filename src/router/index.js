@@ -7,7 +7,10 @@ import Records from "@/components/Records/Records";
 import Image from "@/components/Settings/Media/Image";
 import VideoEncoder from "@/components/Settings/Media/VideoEncoder";
 import OSD from "@/components/Settings/Media/OSD";
+import AudioEncoder from "@/components/Settings/Media/AudioEncoder";
 import MotionDetection from "@/components/Settings/Analytics/MotionDetection";
+import SoundDetection from "@/components/Settings/Analytics/SoundDetection";
+import IO from "@/components/Settings/IO";
 import Alarms from "@/components/Settings/Alarms";
 import Record from "@/components/Settings/Record";
 import Cloud from "@/components/Settings/Cloud";
@@ -71,7 +74,7 @@ export default new Router({
           component: Image
         },
         {
-          path: "settings/media/encoder/:id",
+          path: "settings/media/video_encoder/:id",
           name: "VideoEncoder",
           component: VideoEncoder,
           props: true
@@ -82,9 +85,24 @@ export default new Router({
           component: OSD
         },
         {
+          path: "settings/media/audio_encoder",
+          name: "AudioEncoder",
+          component: AudioEncoder
+        },
+        {
           path: "settings/analytics/motion_detection",
           name: "MotionDetection",
           component: MotionDetection
+        },
+        {
+          path: "settings/analytics/sound_detection",
+          name: "SoundDetection",
+          component: SoundDetection
+        },
+        {
+          path: "settings/io",
+          name: "IO",
+          component: IO
         },
         {
           path: "settings/alarms",

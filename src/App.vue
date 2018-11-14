@@ -5,6 +5,7 @@
       fixed
       left
       v-model="drawer"
+      width="320"
     >
       <v-list class="hidden-md-and-up">
         <v-list-tile
@@ -51,7 +52,7 @@
         @click="drawer = !drawer"
       ></v-toolbar-side-icon>
       <v-toolbar-title>
-        <router-link to="/" tag="span" class="pointer">TVHelp-CCTV</router-link>
+        <router-link :to="uri('/')" tag="span" class="pointer">TVHelp-CCTV</router-link>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items>
