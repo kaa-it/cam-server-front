@@ -38,7 +38,35 @@ export default {
     camera_log: "Системный журнал"
   },
   image: {
-    title: "Настройки изображения"
+    title: "Настройки изображения",
+    image_card_title: "Изображение",
+    brightness: "Яркость",
+    contrast: "Констрастность",
+    saturation: "Насыщенность",
+    hue: "Оттенок",
+    backlight_compensation_mode: "Режим компенсации засветки",
+    backlight_compensation_level: "Уровень компенсации засветки",
+    wdr_mode: "Режим WDR",
+    wdr_level: "Уровень WDR",
+    defog_mode: "Режим антитуман",
+    defog_level: "Режим антитуман",
+    ldc_mode: "Коррекция искажений объектива",
+    ldc_level: "Уровень коррекции искажений",
+    infrared_cutoff_filter: "ИК фильтр",
+    exposure_card_title: "Настройки экспозиции и баланса белого",
+    white_balance: "Баланс белого",
+    exposure: "Экспозиция",
+    exposure_priority: "Приоритет экспозиции",
+    max_exposure_time: "Максисмальная выдержка",
+    max_gain: "Максимальное усиление, дБ",
+    flicker_control: "Подавление мерцания",
+    denoise_card_title: "Шумоподавление",
+    spatial_filter: "Пространственный фильтр (SNF)",
+    temporal_filter: "Временной фильтр (TNF)",
+    advance_card_title: "Дополнительно",
+    image_sensor_mode: "Режим сенсора",
+    flip_and_mirror: "Зеркальное отображение",
+    rotation: "Поворот изображения"
   },
   video_encoder: {
     title: "Настройки видео кодера {0}"

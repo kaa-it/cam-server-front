@@ -38,7 +38,35 @@ export default {
     camera_log: "Camera log"
   },
   image: {
-    title: "Image Settings"
+    title: "Image Settings",
+    image_card_title: "Image",
+    brightness: "Brightness",
+    contrast: "Contrast",
+    saturation: "Saturation",
+    hue: "Hue",
+    backlight_compensation_mode: "Backlight compensation mode",
+    backlight_compensation_level: "Backlight compensation level",
+    wdr_mode: "WDR mode",
+    wdr_level: "WDR level",
+    defog_mode: "Defog mode",
+    defog_level: "Defog level",
+    ldc_mode: "LDC mode",
+    ldc_level: "LDC level",
+    infrared_cutoff_filter: "Infrared cutoff filter",
+    exposure_card_title: "Exposure and white balance",
+    white_balance: "White balance",
+    exposure: "Exposure",
+    exposure_priority: "Exposure priority",
+    max_exposure_time: "Max exposure time, s",
+    max_gain: "Max gain, dB",
+    flicker_control: "Flicker control",
+    denoise_card_title: "Denoise",
+    spatial_filter: "Spatial filter (SNF)",
+    temporal_filter: "Temporal filter (TNF)",
+    advance_card_title: "Advance",
+    image_sensor_mode: "Image sensor mode",
+    flip_and_mirror: "Flip & mirror",
+    rotation: "Rotation"
   },
   video_encoder: {
     title: "Video Encoder {0} Settings"
