@@ -87,10 +87,10 @@
       <v-flex xs12 sm5 order-xs1 order-sm2>
         <v-card>
           <v-card-title class="yellow darken-1 mb-2">
-            <h3 class="headline">Видео</h3>
+            <h3 class="headline">{{ $t("player.title") }}</h3>
           </v-card-title>
           <v-card-text>
-            <video ref="videoPlayer" :style="{'z-index': 0}" autoplay="" muted="muted"/>
+            <VideoPlayer/>
           </v-card-text>
         </v-card>
       </v-flex>
@@ -159,9 +159,12 @@
 </template>
 
 <script>
-import dashjs from "dashjs";
-import base64 from "base-64";
+import VideoPlayer from "@/components/VideoPlayer";
+
 export default {
+  components: {
+    VideoPlayer
+  },
   data() {
     return {
       brightness: 50,
@@ -216,41 +219,9 @@ export default {
       rotation: ["Off", "Left", "Right"],
       current_rotation: "Off"
     };
-  },
-  mounted() {
-    try {
-      const url = "http://192.168.11.235:8088/start0.mpd";
-
-      this.player = dashjs.MediaPlayer().create();
-
-      this.player.extend(
-        "RequestModifier",
-        () => {
-          return {
-            modifyRequestHeader: xhr => {
-              xhr.setRequestHeader(
-                "Authorization",
-                "Basic " + base64.encode("admin:9999")
-              );
-              return xhr;
-            }
-          };
-        },
-        true
-      );
-
-      this.player.on(dashjs.MediaPlayer.events["ERROR"], e => console.log(e));
-      this.player.initialize(this.$refs.videoPlayer);
-      this.player.attachSource(url);
-    } catch (err) {
-      console.log(err);
-    }
   }
 };
 </script>
 
-<style scoped>
-video {
-  width: 100%;
-}
+<style>
 </style>

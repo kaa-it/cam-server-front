@@ -17,7 +17,7 @@
               <v-toolbar-title>{{defaultItem.url}}</v-toolbar-title>
             </v-toolbar>
             <v-card-text>
-              <video ref="videoPlayer" :style="{'z-index': 0}" autoplay="" muted="muted"/>
+              <VideoPlayer/>
             </v-card-text>
           </v-card>
         </v-flex>
@@ -26,11 +26,13 @@
 </template>
 
 <script>
-import dashjs from "dashjs";
-import base64 from "base-64";
+import VideoPlayer from "@/components/VideoPlayer";
 
 export default {
   name: "Home",
+  components: {
+    VideoPlayer
+  },
   data() {
     return {
       defaultItem: {
@@ -57,40 +59,6 @@ export default {
       ],
       player: null
     };
-  },
-  mounted() {
-    try {
-      const url = "http://192.168.11.235:8088/start0.mpd";
-
-      this.player = dashjs.MediaPlayer().create();
-
-      this.player.extend(
-        "RequestModifier",
-        () => {
-          return {
-            modifyRequestHeader: xhr => {
-              xhr.setRequestHeader(
-                "Authorization",
-                "Basic " + base64.encode("admin:9999")
-              );
-              return xhr;
-            }
-          };
-        },
-        true
-      );
-
-      this.player.on(dashjs.MediaPlayer.events["ERROR"], e => console.log(e));
-      this.player.initialize(this.$refs.videoPlayer);
-      this.player.attachSource(url);
-    } catch (err) {
-      console.log(err);
-    }
-  },
-  methods: {
-    onStreamSwitch() {
-      console.log(this.defaultItem.url);
-    }
   }
 };
 </script>

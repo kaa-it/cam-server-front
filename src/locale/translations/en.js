@@ -69,7 +69,19 @@ export default {
     rotation: "Rotation"
   },
   video_encoder: {
-    title: "Video Encoder {0} Settings"
+    title: "Video Encoder {0} Settings",
+    encode_card_title: "Encode",
+    auxilary_card_title: "Auxilary",
+    stream_support: "Stream support",
+    codec_type: "Codec type",
+    resolution: "Resolution",
+    framerate: "Framerate, fps",
+    rate_control: "Rate control",
+    bitrate: "Bitrate, kbps",
+    quality: "Quality",
+    gop_length: "GOP length",
+    enable_roi: "Enable ROI",
+    region: "Region {0}"
   },
   osd: {
     title: "Overlay Settings"
@@ -121,5 +133,8 @@ export default {
   },
   camera_log: {
     title: "Camera log"
+  },
+  player: {
+    title: "Video"
   }
 };

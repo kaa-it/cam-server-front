@@ -69,7 +69,19 @@ export default {
     rotation: "Поворот изображения"
   },
   video_encoder: {
-    title: "Настройки видео кодера {0}"
+    title: "Настройки видео кодера {0}",
+    encode_card_title: "Кодирование видео",
+    auxilary_card_title: "Дополнительно",
+    stream_support: "Включить поток",
+    codec_type: "Кодек",
+    resolution: "Разрешение",
+    framerate: "Частота кадров, кадров/с",
+    rate_control: "Управление потоком",
+    bitrate: "Скорость потока, кбит/с",
+    quality: "Качество",
+    gop_length: "Интервал i-кадров",
+    enable_roi: "Значимые области",
+    region: "Область {0}"
   },
   osd: {
     title: "Настройки наложения изображения"
@@ -121,5 +133,8 @@ export default {
   },
   camera_log: {
     title: "Системный журнал"
+  },
+  player: {
+    title: "Видео"
   }
 };
