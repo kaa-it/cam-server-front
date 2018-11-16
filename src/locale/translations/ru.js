@@ -84,7 +84,16 @@ export default {
     region: "Область"
   },
   osd: {
-    title: "Настройки наложения изображения"
+    title: "Настройки наложения изображения",
+    overlay_card_title: "Наложение изображения",
+    mask_card_title: "Маскирование изображения",
+    timestamp: "Время",
+    time_position: "Положение времени",
+    text: "Текст",
+    text_position: "Положение текста",
+    ptz_status: "Информация PTZ",
+    privacy_mask: "Маска",
+    region: "Область"
   },
   audio_encoder: {
     title: "Настройки звука"

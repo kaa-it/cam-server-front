@@ -84,7 +84,16 @@ export default {
     region: "Region"
   },
   osd: {
-    title: "Overlay Settings"
+    title: "Overlay Settings",
+    overlay_card_title: "Overlay",
+    mask_card_title: "Mask",
+    timestamp: "Timestamp",
+    time_position: "Time position",
+    text: "Text",
+    text_position: "Text position",
+    ptz_status: "PTZ status",
+    privacy_mask: "Privacy mask",
+    region: "Region"
   },
   audio_encoder: {
     title: "Audio Encoder Settings"

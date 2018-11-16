@@ -59,6 +59,11 @@ export default {
       ],
       player: null
     };
+  },
+  methods: {
+    onStreamSwitch() {
+      console.log(this.defaultItem.url);
+    }
   }
 };
 </script>
