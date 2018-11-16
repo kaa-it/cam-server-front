@@ -96,7 +96,13 @@ export default {
     region: "Region"
   },
   audio_encoder: {
-    title: "Audio Encoder Settings"
+    title: "Audio Settings",
+    audio_source_card_title: "Audio source",
+    encode_card_title: "Encode",
+    input_gain: "Input gain",
+    enable_audio: "Enable audio",
+    encoding: "Encoding",
+    sample_rate: "Sample rate, kHz"
   },
   motion_detection: {
     title: "Motion Detection Settings"

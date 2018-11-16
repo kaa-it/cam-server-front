@@ -96,7 +96,13 @@ export default {
     region: "Область"
   },
   audio_encoder: {
-    title: "Настройки звука"
+    title: "Настройки звука",
+    audio_source_card_title: "Аудио вход",
+    encode_card_title: "Кодирование звука",
+    input_gain: "Громкость звука",
+    enable_audio: "Включить звук",
+    encoding: "Кодек",
+    sample_rate: "Частота дискретизации, кГц"
   },
   motion_detection: {
     title: "Настройки детектора движения"
