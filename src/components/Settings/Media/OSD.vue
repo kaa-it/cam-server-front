@@ -162,11 +162,36 @@ export default {
       ptz_status_enabled: false,
       privacy_mask_enabled: false,
       headers: [
-        { text: this.$t("osd.region"), value: "id", align: "left", sortable: false },
-        { text: "X", value: "x", align: "left", sortable: false },
-        { text: "Y", value: "y", align: "left", sortable: false },
-        { text: "W", value: "width", align: "left", sortable: false },
-        { text: "H", value: "height", align: "left", sortable: false }
+        {
+          text: this.$t("osd.region"),
+          value: "id",
+          align: "left",
+          sortable: false
+        },
+        {
+          text: "X",
+          value: "x",
+          align: "left",
+          sortable: false
+        },
+        {
+          text: "Y",
+          value: "y",
+          align: "left",
+          sortable: false
+        },
+        {
+          text: "W",
+          value: "width",
+          align: "left",
+          sortable: false
+        },
+        {
+          text: "H",
+          value: "height",
+          align: "left",
+          sortable: false
+        }
       ],
       regions: [
         {
