@@ -69,7 +69,7 @@ export default {
     rotation: "Поворот изображения"
   },
   video_encoder: {
-    title: "Настройки видео кодера {0}",
+    title: "Настройки видео {0}",
     encode_card_title: "Кодирование видео",
     auxilary_card_title: "Дополнительно",
     stream_support: "Включить поток",
@@ -81,7 +81,7 @@ export default {
     quality: "Качество",
     gop_length: "Интервал i-кадров",
     enable_roi: "Значимые области",
-    region: "Область {0}"
+    region: "Область"
   },
   osd: {
     title: "Настройки наложения изображения"

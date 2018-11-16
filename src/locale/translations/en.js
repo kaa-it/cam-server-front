@@ -69,7 +69,7 @@ export default {
     rotation: "Rotation"
   },
   video_encoder: {
-    title: "Video Encoder {0} Settings",
+    title: "Video Settings {0}",
     encode_card_title: "Encode",
     auxilary_card_title: "Auxilary",
     stream_support: "Stream support",
@@ -81,7 +81,7 @@ export default {
     quality: "Quality",
     gop_length: "GOP length",
     enable_roi: "Enable ROI",
-    region: "Region {0}"
+    region: "Region"
   },
   osd: {
     title: "Overlay Settings"
