@@ -105,10 +105,21 @@ export default {
     sample_rate: "Sample rate, kHz"
   },
   motion_detection: {
-    title: "Motion Detection Settings"
+    title: "Motion Detection Settings",
+    motion_detection_card_title: "Motion detection",
+    motion_detection_mode: "Motion detection mode",
+    sensitivity_level: "Sensitivity level",
+    customized_sensitivity_level: "Customized sensitivity level, %",
+    region_of_interest: "Region if interest",
+    select_all: "Select all",
+    clear_all: "Clear all"
   },
   sound_detection: {
-    title: "Sound Detection Settings"
+    title: "Sound Detection Settings",
+    sound_detection_card_title: "Sound detection",
+    sound_detection_mode: "Sound detection mode",
+    sensitivity_level: "Sensitivity level",
+    customized_sensitivity_level: "Customized sensitivity level, %"
   },
   io: {
     title: "Inputs/Outputs Settings"

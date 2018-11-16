@@ -9,7 +9,7 @@
           <v-card-title class="yellow darken-1 mb-2">
             <h3 class="headline">{{ $t("image.image_card_title") }}</h3>
           </v-card-title>
-          <v-layout row wrap align-baseline>
+          <v-layout row wrap align-center>
             <v-flex d-flex xs6>
               <v-subheader class="black--text">{{ $t("image.brightness") }}</v-subheader>
             </v-flex>

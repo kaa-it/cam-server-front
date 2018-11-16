@@ -105,10 +105,21 @@ export default {
     sample_rate: "Частота дискретизации, кГц"
   },
   motion_detection: {
-    title: "Настройки детектора движения"
+    title: "Настройки детектора движения",
+    motion_detection_card_title: "Детектор движения",
+    motion_detection_mode: "Режим детектора движения",
+    sensitivity_level: "Уровень чувствительности",
+    customized_sensitivity_level: "Значение чувствительности, %",
+    region_of_interest: "Значимая область",
+    select_all: "Выделить все",
+    clear_all: "Сбросить все"
   },
   sound_detection: {
-    title: "Настройки детектора звука"
+    title: "Настройки детектора звука",
+    sound_detection_card_title: "Детектор звука",
+    sound_detection_mode: "Режим детектора звука",
+    sensitivity_level: "Уровень чувствительности",
+    customized_sensitivity_level: "Значение чувствительности, %"
   },
   io: {
     title: "Настройки входов/выходов"

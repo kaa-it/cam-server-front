@@ -14,7 +14,7 @@
           <v-card-title class="yellow darken-1 mb-2">
             <h3 class="headline">{{ $t("video_encoder.encode_card_title") }}</h3>
           </v-card-title>
-          <v-layout row wrap align-baseline>
+          <v-layout row wrap align-center>
             <v-flex d-flex xs12>
               <v-select :disabled="!enabled" class="px-3" :label="$t('video_encoder.codec_type')" :items="codec_type" v-model="current_codec_type"/>
             </v-flex>
@@ -60,7 +60,7 @@
           <v-card-title class="yellow darken-1">
             <h3 class="headline mb-0">{{ $t("video_encoder.auxilary_card_title") }}</h3>
           </v-card-title>
-          <v-layout row wrap align-baseline>
+          <v-layout row wrap align-center>
             <v-flex d-flex xs6>
               <v-subheader class="black--text">{{ $t("video_encoder.gop_length") }}</v-subheader>
             </v-flex>

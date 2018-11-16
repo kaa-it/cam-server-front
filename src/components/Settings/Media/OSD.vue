@@ -9,7 +9,7 @@
           <v-card-title class="yellow darken-1 mb-2">
             <h3 class="headline">{{ $t("osd.overlay_card_title") }}</h3>
           </v-card-title>
-          <v-layout row wrap align-baseline>
+          <v-layout row wrap align-center>
             <v-flex d-flex xs6>
               <v-checkbox height="1px" class="px-3" v-model="time_enabled">
                 <div slot="label" class="font-weight-black body-1 black--text">{{ $t("osd.timestamp") }}</div>
@@ -72,7 +72,7 @@
           <v-card-title class="yellow darken-1">
             <h3 class="headline mb-0">{{ $t("osd.mask_card_title") }}</h3>
           </v-card-title>
-          <v-layout row wrap align-baseline>
+          <v-layout row wrap>
             <v-flex d-flex xs12>
               <v-checkbox height="1px" class="px-3" v-model="privacy_mask_enabled">
                 <div slot="label" class="font-weight-black body-1 black--text">{{ $t("osd.privacy_mask") }}</div>
