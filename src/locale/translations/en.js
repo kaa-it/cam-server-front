@@ -110,7 +110,7 @@ export default {
     motion_detection_mode: "Motion detection mode",
     sensitivity_level: "Sensitivity level",
     customized_sensitivity_level: "Customized sensitivity level, %",
-    region_of_interest: "Region if interest",
+    region_of_interest: "Region of interest",
     select_all: "Select all",
     clear_all: "Clear all"
   },

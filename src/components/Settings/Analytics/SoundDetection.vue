@@ -13,6 +13,22 @@
              <v-flex d-flex xs12>
               <v-select class="px-3" :label="$t('sound_detection.sound_detection_mode')" :items="sound_detection_mode" v-model="current_sound_detection_mode"/>
             </v-flex>
+            <v-radio-group class="px-4" v-model="radioGroup">
+              <v-layout row wrap align-center>
+              <v-flex xs6>
+                <v-radio :disabled="!sound_detection_enabled" value="1" :label="$t('sound_detection.sensitivity_level')"/>
+              </v-flex>
+              <v-flex xs5 offset-xs1>
+                <v-select :disabled="!sound_detection_enabled" :items="sensitivity_levels" v-model="current_sensitivity_level"/> 
+              </v-flex>
+              <v-flex xs6>
+                <v-radio :disabled="!sound_detection_enabled" value="2" :label="$t('sound_detection.customized_sensitivity_level')"/>
+              </v-flex>
+              <v-flex xs5 offset-xs1>
+                <v-slider :disabled="!sound_detection_enabled" v-model="customized_sensitivity_level" thumb-label="always" :thumb-size="24"/> 
+              </v-flex>
+              </v-layout>    
+            </v-radio-group>
           </v-layout>
         </v-card>    
       </v-flex>
@@ -41,7 +57,11 @@ export default {
     return {
       sound_detection_mode: ["Off", "Ambient", "Peak"],
       current_sound_detection_mode: "Off",
-      sound_detection_enabled: false
+      sound_detection_enabled: false,
+      radioGroup: 1,
+      sensitivity_levels: ["Low", "Medium", "High"],
+      current_sensitivity_level: "Medium",
+      customized_sensitivity_level: 50
     };
   },
   watch: {
