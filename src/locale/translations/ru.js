@@ -122,7 +122,13 @@ export default {
     customized_sensitivity_level: "Значение чувствительности, %"
   },
   io: {
-    title: "Настройки входов/выходов"
+    title: "Настройки входов/выходов",
+    external_input_card_title: "Внешний вход",
+    external_output_card_title: "Внешний выход",
+    relay_idle_state: "Нормальное состояние реле",
+    relay_state: "Состояние реле",
+    relay_mode: "Режим реле",
+    delay_time: "Время задержки, с"
   },
   alarms: {
     title: "Настройки тревоги"

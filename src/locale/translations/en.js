@@ -122,7 +122,13 @@ export default {
     customized_sensitivity_level: "Customized sensitivity level, %"
   },
   io: {
-    title: "Inputs/Outputs Settings"
+    title: "Inputs/Outputs Settings",
+    external_input_card_title: "External input",
+    external_output_card_title: "External output",
+    relay_idle_state: "Relay idle state",
+    relay_state: "Relay state",
+    relay_mode: "Relay mode",
+    delay_time: "Delay time, s"
   },
   alarms: {
     title: "Alarm Settings"
