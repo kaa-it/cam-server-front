@@ -1,4 +1,8 @@
 export default {
+  common: {
+    button_save: "Save",
+    button_cancel: "Cancel"
+  },
   toolbar: {
     live: "Live",
     login: "Login",
@@ -131,10 +135,37 @@ export default {
     delay_time: "Delay time, s"
   },
   alarms: {
-    title: "Alarm Settings"
+    title: "Alarm Settings",
+    trigger_card_title: "Alarm trigger",
+    action_card_title: "Alarm action",
+    motion_detection: "Motion detection",
+    network_connection_lost: "Network connection lost",
+    audio_alarm: "Audio alarm",
+    external_triggers: "External triggers",
+    activate_output_relay: "Activate output relay"
   },
   record: {
-    title: "Record Settings"
+    title: "Record Settings",
+    common_card_title: "Common settings",
+    local_storage_card_title: "Save into local storage",
+    ftp_card_title: "Upload via FTP",
+    smtp_card_title: "Upload via SMTP",
+    schedule_card_title: "Schedule",
+    max_duration_avi: "Maximum duration of avi file, sec",
+    interval_between_jpg: "Interval between jpg files, sec",
+    total_duration_after_alarm: "Total duration of record after alarm, sec",
+    stream_for_record: "Stream for record",
+    file_format: "File format",
+    local_storage: "Local storage",
+    remove_files_from_archive: "Remove old files from archive",
+    max_retention_time: "Maximum retention time, days",
+    remove_files_disk_full: "Remove old files when disk full",
+    reserved_space: "Reserved space, MB",
+    video_duration_per_letter: "Video duration per letter, sec",
+    frequency_of_the_send: "Frequency of the send",
+    letters_count: "Count of letters",
+    for_period: "For period, min",
+    mode: "Mode"
   },
   cloud: {
     title: "IPEYE Cloud Settings"

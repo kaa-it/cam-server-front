@@ -1,4 +1,8 @@
 export default {
+  common: {
+    button_save: "Сохранить",
+    button_cancel: "Отмена"
+  },
   toolbar: {
     live: "Реальное видео",
     login: "Вход",
@@ -131,10 +135,38 @@ export default {
     delay_time: "Время задержки, с"
   },
   alarms: {
-    title: "Настройки тревоги"
+    title: "Настройки тревоги",
+    trigger_card_title: "Настройки сигнала тревоги",
+    action_card_title: "Действия при тревоге",
+    motion_detection: "Детектор движения",
+    network_connection_lost: "Потеря сети",
+    audio_alarm: "Звуковая тревога",
+    external_triggers: "Внешние сигналы тревоги",
+    activate_output_relay: "Активация выходного реле"
   },
   record: {
-    title: "Настройки записи"
+    title: "Настройки записи",
+    common_card_title: "Общие настройки",
+    local_storage_card_title: "Запись на локальный носитель",
+    ftp_card_title: "Загрузка на FTP сервер",
+    smtp_card_title: "Отправка писем через SMTP сервер",
+    schedule_card_title: "Расписание",
+    max_duration_avi: "Максимальная длительность avi файла, сек",
+    interval_between_jpg: "Интервал между jpg файлами, сек",
+    total_duration_after_alarm: "Общая длительность записи после тревоги, сек",
+    stream_for_record: "Поток для записи",
+    file_format: "Формат файла",
+    local_storage: "Локальный носитель",
+    remove_files_from_archive: "Удалять старые файлы из архива",
+    max_retention_time: "Максимальный срок хранения, дней",
+    remove_files_disk_full: "Удалять старые файлы при заполнении диска",
+    reserved_space: "Резерв на диске, Мб",
+    video_duration_per_letter: "Длительность видео в одном письме, сек",
+    letters_per_minute: "Отправлять писем в минуту",
+    mode: "Режим",
+    frequency_of_the_send: "Частота отправки",
+    letters_count: "Количество писем",
+    for_period: "За период, мин"
   },
   cloud: {
     title: "Настройки облака IPEYE"

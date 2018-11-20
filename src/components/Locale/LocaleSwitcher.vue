@@ -34,6 +34,7 @@ export default {
   methods: {
     changeLocale(locale) {
       this.$i18n.locale = locale;
+      this.$vuetify.lang.current = locale;
       this.$router.push(`/${locale}`);
     }
   },
