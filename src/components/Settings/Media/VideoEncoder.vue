@@ -11,7 +11,7 @@
       </v-flex>
       <v-flex xs12 sm7 order-xs2 order-sm1>
         <v-card class="my-3">
-          <v-card-title class="yellow darken-1 mb-2">
+          <v-card-title class="yellow darken-1 mb-3">
             <span class="title">{{ $t("video_encoder.encode_card_title") }}</span>
           </v-card-title>
           <v-layout row wrap align-center>
@@ -41,24 +41,22 @@
             </v-flex>
             <v-flex d-flex xs6>
               <v-text-field readonly v-model="quality" class="px-3" type="number"/>
-            </v-flex>           
-          </v-layout>  
+            </v-flex>
+          </v-layout>
         </v-card>
       </v-flex>
       <v-flex xs12 sm5 order-xs1 order-sm2>
         <v-card :class="{'mt-3': true, 'ml-0': $vuetify.breakpoint.xsOnly, 'ml-3': $vuetify.breakpoint.smAndUp}">
-          <v-card-title class="yellow darken-1 mb-2">
+          <v-card-title class="yellow darken-1 mb-3">
             <span class="title">{{ $t("player.title") }}</span>
           </v-card-title>
-          <v-card-text>
-            <VideoPlayer/>
-          </v-card-text>
+          <VideoPlayer class="mb-3 px-3"/>
         </v-card>
       </v-flex>
-      <v-flex xs12 sm7 order-xs3 order-sm3>   
+      <v-flex xs12 sm7 order-xs3 order-sm3>
         <v-card>
-          <v-card-title class="yellow darken-1">
-            <h3 class="title">{{ $t("video_encoder.auxilary_card_title") }}</h3>
+          <v-card-title class="yellow darken-1 mb-3">
+            <span class="title">{{ $t("video_encoder.auxilary_card_title") }}</span>
           </v-card-title>
           <v-layout row wrap align-center>
             <v-flex d-flex xs6>
@@ -90,7 +88,7 @@
                         slot="input"
                         type="number"
                         v-model="props.item.x"/>
-                    </v-edit-dialog>  
+                    </v-edit-dialog>
                   </td>
                   <td class="text-xs-left">
                     <v-edit-dialog
@@ -101,7 +99,7 @@
                         slot="input"
                         type="number"
                         v-model="props.item.y"/>
-                    </v-edit-dialog>  
+                    </v-edit-dialog>
                   </td>
                   <td class="text-xs-left">
                     <v-edit-dialog
@@ -112,7 +110,7 @@
                         slot="input"
                         type="number"
                         v-model="props.item.width"/>
-                    </v-edit-dialog>  
+                    </v-edit-dialog>
                   </td>
                   <td class="text-xs-left">
                     <v-edit-dialog
@@ -123,16 +121,16 @@
                         slot="input"
                         type="number"
                         v-model="props.item.height"/>
-                    </v-edit-dialog>  
+                    </v-edit-dialog>
                   </td>
                 </template>
               </v-data-table>
-            </v-flex>    
-          </v-layout>  
+            </v-flex>
+          </v-layout>
         </v-card>
-      </v-flex>        
+      </v-flex>
     </v-layout>
-  </v-container>    
+  </v-container>
 </template>
 
 <script>

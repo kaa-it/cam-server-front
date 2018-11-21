@@ -1,19 +1,19 @@
 <template>
-  <v-container fluid grid-list-xl>
+  <v-container fluid>
     <v-layout row wrap>
       <v-flex d-flex xs12>
-        <h1>{{ $t("osd.title") }}</h1>
+        <span class="headline font-weight-bold">{{ $t("osd.title") }}</span>
       </v-flex>
       <v-flex xs12 sm7 order-xs2 order-sm1>
-        <v-card>
-          <v-card-title class="yellow darken-1 mb-2">
-            <h3 class="headline">{{ $t("osd.overlay_card_title") }}</h3>
+        <v-card class="my-3">
+          <v-card-title class="yellow darken-1 mb-3">
+            <span class="title">{{ $t("osd.overlay_card_title") }}</span>
           </v-card-title>
           <v-layout row wrap align-center>
             <v-flex d-flex xs6>
               <v-checkbox height="1px" class="px-3" v-model="time_enabled">
                 <div slot="label" class="font-weight-black body-1 black--text">{{ $t("osd.timestamp") }}</div>
-              </v-checkbox>  
+              </v-checkbox>
             </v-flex>
             <v-flex d-flex xs6>
               <v-select
@@ -33,7 +33,7 @@
             <v-flex d-flex xs6>
               <v-checkbox height="1px" class="px-3" v-model="text_enabled">
                 <div slot="label" class="font-weight-black body-1 black--text">{{ $t("osd.text") }}</div>
-              </v-checkbox>  
+              </v-checkbox>
             </v-flex>
             <v-flex d-flex xs6>
               <v-text-field
@@ -53,24 +53,22 @@
               <v-checkbox height="1px" class="px-3" v-model="ptz_status_enabled">
                 <div slot="label" class="font-weight-black body-1 black--text">{{ $t("osd.ptz_status") }}</div>
               </v-checkbox>
-            </v-flex>          
-          </v-layout>    
-        </v-card>  
+            </v-flex>
+          </v-layout>
+        </v-card>
       </v-flex>
       <v-flex xs12 sm5 order-xs1 order-sm2>
-        <v-card>
-          <v-card-title class="yellow darken-1 mb-2">
-            <h3 class="headline">{{ $t("player.title") }}</h3>
+        <v-card :class="{'mt-3': true, 'ml-0': $vuetify.breakpoint.xsOnly, 'ml-3': $vuetify.breakpoint.smAndUp}">
+          <v-card-title class="yellow darken-1 mb-3">
+            <span class="title">{{ $t("player.title") }}</span>
           </v-card-title>
-          <v-card-text>
-            <VideoPlayer/>
-          </v-card-text>
-        </v-card>      
+          <VideoPlayer class="mb-3 px-3"/>
+        </v-card>
       </v-flex>
       <v-flex xs12 sm7 order-xs3 order-sm3>
         <v-card>
-          <v-card-title class="yellow darken-1">
-            <h3 class="headline mb-0">{{ $t("osd.mask_card_title") }}</h3>
+          <v-card-title class="yellow darken-1 mb-3">
+            <span class="title">{{ $t("osd.mask_card_title") }}</span>
           </v-card-title>
           <v-layout row wrap>
             <v-flex d-flex xs12>
@@ -96,7 +94,7 @@
                         slot="input"
                         type="number"
                         v-model="props.item.x"/>
-                    </v-edit-dialog>  
+                    </v-edit-dialog>
                   </td>
                   <td class="text-xs-left">
                     <v-edit-dialog
@@ -107,7 +105,7 @@
                         slot="input"
                         type="number"
                         v-model="props.item.y"/>
-                    </v-edit-dialog>  
+                    </v-edit-dialog>
                   </td>
                   <td class="text-xs-left">
                     <v-edit-dialog
@@ -118,7 +116,7 @@
                         slot="input"
                         type="number"
                         v-model="props.item.width"/>
-                    </v-edit-dialog>  
+                    </v-edit-dialog>
                   </td>
                   <td class="text-xs-left">
                     <v-edit-dialog
@@ -129,14 +127,14 @@
                         slot="input"
                         type="number"
                         v-model="props.item.height"/>
-                    </v-edit-dialog>  
+                    </v-edit-dialog>
                   </td>
                 </template>
               </v-data-table>
-            </v-flex>    
-          </v-layout>    
-        </v-card>  
-      </v-flex>      
+            </v-flex>
+          </v-layout>
+        </v-card>
+      </v-flex>
     </v-layout>
   </v-container>
 </template>

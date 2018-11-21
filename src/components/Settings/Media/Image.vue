@@ -86,12 +86,10 @@
       </v-flex>
       <v-flex xs12 sm5 order-xs1 order-sm2>
         <v-card :class="{'mt-3': true, 'ml-0': $vuetify.breakpoint.xsOnly, 'ml-3': $vuetify.breakpoint.smAndUp}">
-          <v-card-title class="yellow darken-1 mb-2">
+          <v-card-title class="yellow darken-1 mb-3">
             <span class="title">{{ $t("player.title") }}</span>
           </v-card-title>
-          <v-card-text>
-            <VideoPlayer/>
-          </v-card-text>
+          <VideoPlayer class="mb-3 px-3"/>
         </v-card>
       </v-flex>
       <v-flex xs12 sm7 order-xs3 order-sm3>   
