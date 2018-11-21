@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid grid-list-xl>
+  <v-container fluid>
     <v-layout row wrap>
       <v-flex d-flex xs12>
         <v-switch v-if="id > 1" height="1px" v-model="enabled">
@@ -10,7 +10,7 @@
         <span class="headline font-weight-bold" v-else>{{ $t("video_encoder.title", [id]) }}</span>
       </v-flex>
       <v-flex xs12 sm7 order-xs2 order-sm1>
-        <v-card>
+        <v-card class="my-3">
           <v-card-title class="yellow darken-1 mb-2">
             <span class="title">{{ $t("video_encoder.encode_card_title") }}</span>
           </v-card-title>
@@ -46,7 +46,7 @@
         </v-card>
       </v-flex>
       <v-flex xs12 sm5 order-xs1 order-sm2>
-        <v-card>
+        <v-card :class="{'mt-3': true, 'ml-0': $vuetify.breakpoint.xsOnly, 'ml-3': $vuetify.breakpoint.smAndUp}">
           <v-card-title class="yellow darken-1 mb-2">
             <span class="title">{{ $t("player.title") }}</span>
           </v-card-title>
@@ -58,7 +58,7 @@
       <v-flex xs12 sm7 order-xs3 order-sm3>   
         <v-card>
           <v-card-title class="yellow darken-1">
-            <h3 class="headline mb-0">{{ $t("video_encoder.auxilary_card_title") }}</h3>
+            <h3 class="title">{{ $t("video_encoder.auxilary_card_title") }}</h3>
           </v-card-title>
           <v-layout row wrap align-center>
             <v-flex d-flex xs6>
