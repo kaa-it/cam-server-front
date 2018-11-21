@@ -2,12 +2,12 @@
   <v-container fluid >
     <v-layout row wrap>
       <v-flex d-flex xs12>
-        <h1>{{ $t("image.title") }}</h1>
+        <span class="headline font-weight-bold">{{ $t("image.title") }}</span>
       </v-flex>
       <v-flex xs12 sm7 order-xs2 order-sm1>
         <v-card class="my-3">
           <v-card-title class="yellow darken-1 mb-3">
-            <h3 class="headline">{{ $t("image.image_card_title") }}</h3>
+            <span class="title">{{ $t("image.image_card_title") }}</span>
           </v-card-title>
           <v-layout row wrap align-center>
             <v-flex d-flex xs6>
@@ -87,7 +87,7 @@
       <v-flex xs12 sm5 order-xs1 order-sm2>
         <v-card :class="{'mt-3': true, 'ml-0': $vuetify.breakpoint.xsOnly, 'ml-3': $vuetify.breakpoint.smAndUp}">
           <v-card-title class="yellow darken-1 mb-2">
-            <h3 class="headline">{{ $t("player.title") }}</h3>
+            <span class="title">{{ $t("player.title") }}</span>
           </v-card-title>
           <v-card-text>
             <VideoPlayer/>
@@ -97,7 +97,7 @@
       <v-flex xs12 sm7 order-xs3 order-sm3>   
         <v-card class="mb-3">
           <v-card-title class="yellow darken-1 mb-3">
-            <h3 class="headline mb-0">{{ $t("image.exposure_card_title") }}</h3>
+            <h3 class="title">{{ $t("image.exposure_card_title") }}</h3>
           </v-card-title>
           <v-layout row wrap>
             <v-flex d-flex xs12> 
@@ -124,7 +124,7 @@
       <v-flex xs12 sm7 order-xs4 order-sm4>
         <v-card class="mb-3">
           <v-card-title class="yellow darken-1 mb-3">
-            <h3 class="headline mb-0">{{ $t("image.denoise_card_title") }}</h3>
+            <h3 class="title">{{ $t("image.denoise_card_title") }}</h3>
           </v-card-title>
           <v-layout row wrap>
             <v-flex d-flex xs12>
@@ -139,7 +139,7 @@
       <v-flex xs12 sm7 order-xs5 order-sm5>
         <v-card>
           <v-card-title class="yellow darken-1 mb-3">
-            <h3 class="headline mb-0">{{ $t("image.advance_card_title") }}</h3>
+            <h3 class="title">{{ $t("image.advance_card_title") }}</h3>
           </v-card-title>
           <v-layout row wrap>
             <v-flex d-flex xs12>

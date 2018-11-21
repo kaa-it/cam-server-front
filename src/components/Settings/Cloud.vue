@@ -2,7 +2,7 @@
   <v-container fluid >
     <v-layout row wrap>
       <v-flex d-flex xs12>
-        <h1 class="mb-3"> {{ $t("cloud.title") }}</h1>
+        <span class="headline font-weight-bold mb-3"> {{ $t("cloud.title") }}</span>
       </v-flex>
       <v-flex xs12 sm7>
         <v-badge color="red" class="mb-3">

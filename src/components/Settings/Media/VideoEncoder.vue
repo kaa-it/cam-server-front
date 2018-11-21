@@ -4,15 +4,15 @@
       <v-flex d-flex xs12>
         <v-switch v-if="id > 1" height="1px" v-model="enabled">
           <div slot="label" class="body-1 black--text">
-            <h1>{{ $t("video_encoder.title", [id]) }}</h1>
+            <span class="headline font-weight-bold">{{ $t("video_encoder.title", [id]) }}</span>
           </div>
         </v-switch>
-        <h1 v-else>{{ $t("video_encoder.title", [id]) }}</h1>
+        <span class="headline font-weight-bold" v-else>{{ $t("video_encoder.title", [id]) }}</span>
       </v-flex>
       <v-flex xs12 sm7 order-xs2 order-sm1>
         <v-card>
           <v-card-title class="yellow darken-1 mb-2">
-            <h3 class="headline">{{ $t("video_encoder.encode_card_title") }}</h3>
+            <span class="title">{{ $t("video_encoder.encode_card_title") }}</span>
           </v-card-title>
           <v-layout row wrap align-center>
             <v-flex d-flex xs12>
@@ -48,7 +48,7 @@
       <v-flex xs12 sm5 order-xs1 order-sm2>
         <v-card>
           <v-card-title class="yellow darken-1 mb-2">
-            <h3 class="headline">{{ $t("player.title") }}</h3>
+            <span class="title">{{ $t("player.title") }}</span>
           </v-card-title>
           <v-card-text>
             <VideoPlayer/>
