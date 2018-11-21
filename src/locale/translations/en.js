@@ -168,7 +168,33 @@ export default {
     mode: "Mode"
   },
   cloud: {
-    title: "IPEYE Cloud Settings"
+    title: "IPEYE Cloud Settings",
+    about_cloud_service: "About cloud service",
+    cloud_service: "Cloud service",
+    cloud_info1:
+      "Your camera has a built-in {site} remote video surveillance service module. This allows you to watch video from the camera on any device over the Internet for free, as well as for a {fee} to record the archive to the cloud and view it. Before using the IPEYE service, you need to {register} on it.",
+    small_fee: "small fee",
+    register: "register",
+    cloud_info2:
+      "IPEYE cloud service supports H.264 video codec and G.711, PCM, AAC audio codecs. Select two camera streams used in the service (the archive can only be recorded from the main stream) and then click the link at the bottom to save the changes.",
+    cloud_info3:
+      "Setting up archive recording to the cloud, renaming, changing other camera properties or deleting it is done in the {account} of the cloud service.",
+    site_url: "https://ipeye.cam",
+    tarify_url: "https://ipeye.cam/tarify",
+    register_url: "https://ipeye.cam/ipeye_service/index.php#registerform",
+    account_url: "https://ipeye.cam/ipeye_service/index.php?route=page_device",
+    account: "personal account",
+    streams_card_title: "Streams",
+    main_stream: "Main stream",
+    sub_stream: "Sub stream",
+    disabled: "Disabled",
+    enabled: "Enabled",
+    cloud_auth_card_title: "Cloud authentication",
+    login: "Login",
+    password: "Password",
+    camera_name: "Camera name",
+    add_camera: "Add camera to my account",
+    run_module: "Run the IPEYE module"
   },
   local: {
     title: "Network Settings"

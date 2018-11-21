@@ -169,7 +169,33 @@ export default {
     for_period: "За период, мин"
   },
   cloud: {
-    title: "Настройки облака IPEYE"
+    title: "Настройки облака IPEYE",
+    about_cloud_service: "Об облачном сервисе",
+    cloud_service: "Облачный сервис",
+    cloud_info1:
+      "В вашу камеру встроен модуль сервиса удаленного видеонаблюдения {site}. Это позволяет вам бесплатно смотреть видео с камеры на любом устройстве через интернет, а также за {fee} производить запись архива в облако и его просмотр. Перед началом использования сервиса IPEYE вам необходимо {register} на нём.",
+    small_fee: "небольшую плату",
+    register: "зарегистрироваться",
+    cloud_info2:
+      "Облачный сервис IPEYE поддерживает видеокодек H.264 и аудиокодеки G.711, PCM, AAC. Выберите два используемых в сервисе потока с камеры (запись архива может осуществляться только с основного потока) и затем нажмите ссылку в самом низу для сохранения сделанных изменений.",
+    cloud_info3:
+      "Настройка записи архива в облако, переименование, изменение других свойств камеры или её удаление производится в {account} облачного сервиса.",
+    site_url: "https://ipeye.ru",
+    tarify_url: "https://ipeye.ru/tarify",
+    register_url: "https://ipeye.ru/ipeye_service/index.php#registerform",
+    account_url: "https://ipeye.ru/ipeye_service/index.php?route=page_device",
+    account: "личном кабинете",
+    streams_card_title: "Потоки",
+    main_stream: "Основной поток",
+    sub_stream: "Дополнительный поток",
+    disabled: "Отключен",
+    enabled: "Включен",
+    cloud_auth_card_title: "Аутентификация в облаке",
+    login: "Логин",
+    password: "Пароль",
+    camera_name: "Camera name",
+    add_camera: "Добавить камеру в личный кабинет",
+    run_module: "Запустить модуль IPEYE"
   },
   local: {
     title: "Настройки сети"
