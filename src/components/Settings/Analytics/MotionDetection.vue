@@ -5,7 +5,7 @@
         <span class="headline font-weight-bold">{{ $t("motion_detection.title") }}</span>
       </v-flex>
       <v-flex xs12 sm7 order-xs2 order-sm1>
-        <v-card class="my-3">
+        <v-card class="my-3 pb-3">
           <v-card-title class="yellow darken-1 mb-3">
             <span class="title">{{ $t("motion_detection.motion_detection_card_title") }}</span>
           </v-card-title>
@@ -21,7 +21,7 @@
                 </v-radio>
               </v-flex>
               <v-flex xs5 offset-xs1>
-                <v-select :disabled="!motion_detection_enabled" :items="sensitivity_levels" v-model="current_sensitivity_level"/>
+                <v-select :disabled="!motion_detection_enabled || radioGroup === '2'" :items="sensitivity_levels" v-model="current_sensitivity_level"/>
               </v-flex>
               <v-flex xs6>
                 <v-radio :disabled="!motion_detection_enabled" value="2">
@@ -29,7 +29,7 @@
                 </v-radio>
               </v-flex>
               <v-flex xs5 offset-xs1>
-                <v-slider :disabled="!motion_detection_enabled" v-model="customized_sensitivity_level" thumb-label="always" :thumb-size="24"/>
+                <v-slider :disabled="!motion_detection_enabled || radioGroup === '1'" v-model="customized_sensitivity_level" thumb-label="always" :thumb-size="24"/>
               </v-flex>
               </v-layout>
             </v-radio-group>
@@ -69,7 +69,7 @@ export default {
       motion_detection_mode: ["Off", "On"],
       current_motion_detection_mode: "Off",
       motion_detection_enabled: false,
-      radioGroup: 1,
+      radioGroup: "2",
       sensitivity_levels: ["Low", "Medium", "High"],
       current_sensitivity_level: "Medium",
       customized_sensitivity_level: 50

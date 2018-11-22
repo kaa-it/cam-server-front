@@ -199,7 +199,22 @@ export default {
     run_module: "Run the IPEYE module"
   },
   local: {
-    title: "Network Settings"
+    title: "Network Settings",
+    ip_settings_card_title: "IP settings",
+    port_settings_card_title: "Port settings",
+    rtsp_settings_card_title: "RTSP settings",
+    dhcp: "DHCP",
+    static: "Static IP",
+    ip: "IP address",
+    netmask: "Netmask",
+    gateway: "Gateway",
+    dns: "DNS server",
+    http_port: "HTTP port",
+    https_port: "HTTPS port",
+    rtsp_port: "RTSP port",
+    rtsp_multicast: "RTSP multicast",
+    rtsp_tunneling: "RTSP over HTTP tunneling",
+    rtsp_auth: "RTSP authentication"
   },
   ftp: {
     title: "FTP Settings"

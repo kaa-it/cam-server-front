@@ -200,7 +200,22 @@ export default {
     run_module: "Запустить модуль IPEYE"
   },
   local: {
-    title: "Настройки сети"
+    title: "Настройки сети",
+    ip_settings_card_title: "Настройки IP протокола",
+    port_settings_card_title: "Настройки портов",
+    rtsp_settings_card_title: "Настройки RTSP",
+    dhcp: "Режим DHCP",
+    static: "Статический IP",
+    ip: "IP-адрес",
+    netmask: "Маска подсети",
+    gateway: "Основной шлюз",
+    dns: "DNS сервер",
+    http_port: "Порт HTTP",
+    https_port: "Порт HTTPS",
+    rtsp_port: "RTSP порт",
+    rtsp_multicast: "RTSP multicast",
+    rtsp_tunneling: "Туннелирование RTSP через HTTP",
+    rtsp_auth: "Авторизация RTSP"
   },
   ftp: {
     title: "Настройки FTP"
