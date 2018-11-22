@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid >
+  <v-container fluid>
     <v-layout row wrap>
       <v-flex d-flex xs12>
         <span class="headline font-weight-bold mb-3"> {{ $t("cloud.title") }}</span>
@@ -38,41 +38,41 @@
       </v-flex>
       <v-flex xs12 sm7>
         <v-card class="mb-3">
-          <v-card-title class="yellow darken-1 mb-2">
-            <h3 class="headline">{{ $t("cloud.streams_card_title") }}</h3>
+          <v-card-title class="yellow darken-1 mb-3">
+            <span class="title">{{ $t("cloud.streams_card_title") }}</span>
           </v-card-title>
           <v-layout row wrap align-center>
             <v-flex d-flex xs6>
               <v-select class="px-3" :label="$t('cloud.main_stream')" :items="streams" v-model="main_stream"/>
             </v-flex>
-            <v-flex d-flex xs6>
-              <v-chip :color="main_connected ? 'teal' : 'pink'" text-color="white">
+            <v-flex d-flex xs3>
+              <v-chip :color="statusColor(main_stream_status)" text-color="white" disabled small>
                 <v-avatar>
-                  <v-icon>{{ main_connected ? 'check_circle' : 'highlight_off' }}</v-icon>
+                  <v-icon>{{ statusIcon(main_stream_status) }}</v-icon>
                 </v-avatar>
-                {{ main_connected ? $t("cloud.enabled") : $t("cloud.disabled") }}
+                {{ $t("cloud." + main_stream_status) }}
               </v-chip>
-              <v-spacer/>
+              <!--<v-spacer/>-->
             </v-flex>
             <v-flex d-flex xs6>
               <v-select class="px-3" :label="$t('cloud.sub_stream')" :items="streams" v-model="sub_stream"/>
             </v-flex>
-            <v-flex d-flex xs6>
-              <v-chip :color="sub_connected ? 'teal' : 'pink'" text-color="white">
+            <v-flex d-flex xs3>
+              <v-chip :color="statusColor(sub_stream_status)" text-color="white" disabled small>
                 <v-avatar>
-                  <v-icon>{{ sub_connected ? 'check_circle' : 'highlight_off' }}</v-icon>
+                  <v-icon>{{ statusIcon(sub_stream_status) }}</v-icon>
                 </v-avatar>
-                {{ sub_connected ? $t("cloud.enabled") : $t("cloud.disabled") }}
+                {{ $t("cloud." + sub_stream_status) }}
               </v-chip>
-              <v-spacer/>
+              <!--<v-spacer/>-->
             </v-flex>
           </v-layout>
         </v-card>
       </v-flex>
       <v-flex xs12 sm7>
         <v-card class="pb-3">
-          <v-card-title class="yellow darken-1 mb-2">
-            <h3 class="headline">{{ $t("cloud.cloud_auth_card_title") }}</h3>
+          <v-card-title class="yellow darken-1 mb-3">
+            <span class="title">{{ $t("cloud.cloud_auth_card_title") }}</span>
           </v-card-title>
           <v-layout row wrap align-center grid-list-xs>
             <v-flex d-flex xs6 sm6>
@@ -119,12 +119,39 @@ export default {
       ],
       main_stream: "H.264 (1920x1080)",
       sub_stream: "H.264 (1280x720)",
-      main_connected: false,
-      sub_connected: false,
+      status: ["disabled", "offline", "waiting", "online"],
+      main_stream_status: "offline",
+      sub_stream_status: "disabled",
       login: "",
       password: "",
       camera_name: "Camera C8:6C:1E:01:2C:5A"
     };
+  },
+  methods: {
+    statusColor(status) {
+      switch (status) {
+        case "disabled":
+          return "brown lighten-1";
+        case "offline":
+          return "blue lighten-1";
+        case "waiting":
+          return "orange lighten-1";
+        case "online":
+          return "light-green lighten-1";
+      }
+    },
+    statusIcon(status) {
+      switch (status) {
+        case "disabled":
+          return "block";
+        case "offline":
+          return "highlight_off";
+        case "waiting":
+          return "history";
+        case "online":
+          return "check_circle_outline";
+      }
+    }
   }
 };
 </script>
