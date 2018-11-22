@@ -264,7 +264,12 @@ export default {
     title: "Обслуживание"
   },
   camera_log: {
-    title: "Системный журнал"
+    title: "Системный журнал",
+    log_level: "Уровень логирования",
+    system_log: "Системный журнал",
+    access_log: "Журнал доступа",
+    view: "Просмотр",
+    clear: "Удалить"
   },
   player: {
     title: "Видео"

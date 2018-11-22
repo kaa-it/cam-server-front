@@ -263,7 +263,12 @@ export default {
     title: "Maintenance"
   },
   camera_log: {
-    title: "Camera log"
+    title: "Camera log",
+    log_level: "Log level",
+    system_log: "System log",
+    access_log: "Access log",
+    view: "View",
+    clear: "Clear"
   },
   player: {
     title: "Video"
