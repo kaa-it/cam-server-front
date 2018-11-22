@@ -238,7 +238,18 @@ export default {
     receiver_email: "Адрес получателя"
   },
   identification: {
-    title: "Справка"
+    title: "Справка",
+    common_card_title: "Общая информация",
+    about_card_title: "О камере",
+    firmware_card_title: "Версия прошивки",
+    name: "Имя",
+    mac: "MAC адрес",
+    brand_name: "Производитель",
+    model_name: "Модель",
+    u_boot: "Загрузчик",
+    kernel: "Операционная система",
+    software: "Программное обеспечение",
+    photo: "Фото"
   },
   user_management: {
     title: "Пользователи"

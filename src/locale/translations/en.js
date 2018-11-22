@@ -237,7 +237,18 @@ export default {
     receiver_email: "Receiver email"
   },
   identification: {
-    title: "Identification"
+    title: "Identification",
+    common_card_title: "Common info",
+    about_card_title: "About",
+    firmware_card_title: "Firmware version",
+    name: "Name",
+    mac: "MAC address",
+    brand_name: "Brand name",
+    model_name: "Model name",
+    u_boot: "U-boot",
+    kernel: "Kernel",
+    software: "Software",
+    photo: "Photo"
   },
   user_management: {
     title: "User Management"
