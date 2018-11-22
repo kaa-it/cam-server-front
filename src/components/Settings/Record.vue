@@ -1,13 +1,13 @@
 <template>
-  <v-container fluid grid-list-xl>
+  <v-container fluid>
     <v-layout row wrap align-center>
       <v-flex d-flex xs12>
-        <h1>{{ $t("record.title") }}</h1>
+        <span class="headline font-weight-bold">{{ $t("record.title") }}</span>
       </v-flex>
       <v-flex xs12 sm7>
-        <v-card>
-          <v-card-title class="yellow darken-1 mb-2">
-            <h3 class="headline">{{ $t("record.common_card_title") }}</h3>
+        <v-card class="my-3">
+          <v-card-title class="yellow darken-1 mb-3">
+            <span class="title">{{ $t("record.common_card_title") }}</span>
           </v-card-title>
           <v-layout row wrap align-center class="pb-2">
             <v-flex d-flex xs6>
@@ -29,12 +29,12 @@
               <v-text-field class="px-3" v-model="duration_after_alarm" type="number" />
             </v-flex>
           </v-layout>
-        </v-card>  
+        </v-card>
       </v-flex>
       <v-flex xs12 sm7>
-        <v-card>
-          <v-card-title class="yellow darken-1 mb-2">
-            <h3 class="headline">{{ $t("record.local_storage_card_title") }}</h3>
+        <v-card class="mb-3">
+          <v-card-title class="yellow darken-1 mb-3">
+            <span class="title">{{ $t("record.local_storage_card_title") }}</span>
           </v-card-title>
           <v-layout row wrap align-center>
             <v-flex d-flex xs12>
@@ -50,7 +50,9 @@
               <v-select class="px-3" :label="$t('record.local_storage')" :items="storages" v-model="storage"/>
             </v-flex>
             <v-flex d-flex xs12>
-              <v-checkbox class="px-3" :label="$t('record.remove_files_from_archive')" v-model="remove_files_from_archive"/>
+              <v-checkbox class="px-3" v-model="remove_files_from_archive">
+                <div slot="label" class="black--text">{{ $t("record.remove_files_from_archive") }}</div>
+              </v-checkbox>
             </v-flex>
             <v-flex d-flex xs6>
               <v-subheader class="black--text">{{ $t("record.max_retention_time") }}</v-subheader>
@@ -59,7 +61,9 @@
               <v-text-field :disabled="!remove_files_from_archive" class="px-3" v-model="max_retention_time" type="number"/>
             </v-flex>
             <v-flex d-flex xs12>
-              <v-checkbox class="px-3" :label="$t('record.remove_files_disk_full')" v-model="remove_files_disk_full"/>
+              <v-checkbox class="px-3" v-model="remove_files_disk_full">
+                <div slot="label" class="black--text">{{ $t("record.remove_files_disk_full") }}</div>
+              </v-checkbox>
             </v-flex>
             <v-flex d-flex xs6>
               <v-subheader class="black--text">{{ $t("record.reserved_space") }}</v-subheader>
@@ -71,9 +75,9 @@
         </v-card>
       </v-flex>
       <v-flex xs12 sm7>
-        <v-card>
-          <v-card-title class="yellow darken-1 mb-2">
-            <h3 class="headline">{{ $t("record.ftp_card_title") }}</h3>
+        <v-card class="mb-3">
+          <v-card-title class="yellow darken-1 mb-3">
+            <span class="title">{{ $t("record.ftp_card_title") }}</span>
           </v-card-title>
           <v-layout row wrap align-center>
             <v-flex d-flex xs12>
@@ -89,25 +93,25 @@
         </v-card>
       </v-flex>
       <v-flex xs12 sm7>
-        <v-card>
-          <v-card-title class="yellow darken-1 mb-2">
-            <h3 class="headline">{{ $t("record.smtp_card_title") }}</h3>
+        <v-card class="mb-3">
+          <v-card-title class="yellow darken-1 mb-3">
+            <span class="title">{{ $t("record.smtp_card_title") }}</span>
           </v-card-title>
-          <v-layout row wrap align-center>
+          <v-layout row wrap align-center class="pb-3">
             <v-flex d-flex xs12>
               <v-select class="px-3" :label="$t('record.mode')" :items="modes" v-model="smtp_mode"/>
             </v-flex>
             <v-flex d-flex xs12>
-              <v-select :disabled="smtp_mode == 'Disabled'" class="px-3" :label="$t('record.stream_for_record')" :items="streams" v-model="smtp_stream"/>
+              <v-select :disabled="smtp_mode === 'Disabled'" class="px-3" :label="$t('record.stream_for_record')" :items="streams" v-model="smtp_stream"/>
             </v-flex>
             <v-flex d-flex xs12>
-              <v-select :disabled="smtp_mode == 'Disabled'" class="px-3" :label="$t('record.file_format')" :items="file_formats" v-model="smtp_file_format"/>
+              <v-select :disabled="smtp_mode === 'Disabled'" class="px-3" :label="$t('record.file_format')" :items="file_formats" v-model="smtp_file_format"/>
             </v-flex>
             <v-flex d-flex xs6>
               <v-subheader class="black--text">{{ $t("record.video_duration_per_letter") }}</v-subheader>
             </v-flex>
             <v-flex d-flex xs6>
-              <v-text-field :disabled="smtp_mode == 'Disabled'" class="px-3" v-model="reserved_space" type="number"/>
+              <v-text-field :disabled="smtp_mode === 'Disabled'" class="px-3" v-model="reserved_space" type="number"/>
             </v-flex>
             <v-flex d-flex xs12>
               <v-layout row justify-center>
@@ -122,34 +126,34 @@
                             <v-subheader class="black--text">{{ $t("record.letters_count") }}</v-subheader>
                           </v-flex>
                           <v-flex d-flex xs6>
-                            <v-text-field :disabled="smtp_mode == 'Disabled'" class="px-3" v-model="letters_count" type="number"/>
+                            <v-text-field :disabled="smtp_mode === 'Disabled'" class="px-3" v-model="letters_count" type="number"/>
                           </v-flex>
                           <v-flex d-flex xs6>
                             <v-subheader class="black--text">{{ $t("record.for_period") }}</v-subheader>
                           </v-flex>
                           <v-flex d-flex xs6>
-                            <v-text-field :disabled="smtp_mode == 'Disabled'" class="px-3" v-model="letters_period" type="number"/>
+                            <v-text-field :disabled="smtp_mode === 'Disabled'" class="px-3" v-model="letters_period" type="number"/>
                           </v-flex>
                           </v-layout>
-                        </v-card-text>  
-                      </v-card>  
-                    </v-expansion-panel-content>  
+                        </v-card-text>
+                      </v-card>
+                    </v-expansion-panel-content>
                   </v-expansion-panel>
                 </v-flex>
-              </v-layout>  
+              </v-layout>
             </v-flex>
           </v-layout>
         </v-card>
       </v-flex>
       <v-flex xs12 sm7 hidden-xs-only>
         <v-card>
-          <v-card-title class="yellow darken-1 mb-2">
-            <h3 class="headline">{{ $t("record.schedule_card_title") }}</h3>
+          <v-card-title class="yellow darken-1 mb-3">
+            <span class="title">{{ $t("record.schedule_card_title") }}</span>
           </v-card-title>
           <v-layout row wrap align-center>
             <v-flex xs12>
                 <v-data-table
-                  class="px-1"
+                  class="px-1 pb-2"
                   :headers="headers"
                   :items="intervals"
                   hide-actions
@@ -158,8 +162,8 @@
                 >
                   <template slot="items" slot-scope="props">
                     <td class="text-xs-left">
-                      <v-checkbox v-model="props.selected" hide-details/> 
-                    </td>  
+                      <v-checkbox v-model="props.selected" hide-details/>
+                    </td>
                     <td class="text-xs-left">
                       <v-edit-dialog
                         :return-value.sync="props.item.day"
@@ -173,7 +177,7 @@
                           slot="input"
                           :items="days"
                           v-model="props.item.day"/>
-                      </v-edit-dialog>  
+                      </v-edit-dialog>
                     </td>
                     <td class="text-xs-left">
                       <v-edit-dialog
@@ -193,7 +197,7 @@
                           format="24hr"
                           full-width
                           v-model="props.item.start_time"/>
-                      </v-edit-dialog>  
+                      </v-edit-dialog>
                     </td>
                     <td class="text-xs-left">
                       <v-edit-dialog
@@ -213,11 +217,11 @@
                           format="24hr"
                           full-width
                           v-model="props.item.end_time"/>
-                      </v-edit-dialog>  
+                      </v-edit-dialog>
                     </td>
                   </template>
                 </v-data-table>
-              </v-flex>    
+              </v-flex>
           </v-layout>
           </v-card>
       </v-flex>
