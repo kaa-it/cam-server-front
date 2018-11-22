@@ -16,13 +16,17 @@
             <v-radio-group class="px-4" v-model="radioGroup">
               <v-layout row wrap align-center>
               <v-flex xs6>
-                <v-radio :disabled="!sound_detection_enabled" value="1" :label="$t('sound_detection.sensitivity_level')"/>
+                <v-radio :disabled="!sound_detection_enabled" value="1">
+                  <div slot="label" :class="{'black--text': sound_detection_enabled}">{{ $t("sound_detection.sensitivity_level") }}</div>
+                </v-radio>
               </v-flex>
               <v-flex xs5 offset-xs1>
                 <v-select :disabled="!sound_detection_enabled" :items="sensitivity_levels" v-model="current_sensitivity_level"/>
               </v-flex>
               <v-flex xs6>
-                <v-radio :disabled="!sound_detection_enabled" value="2" :label="$t('sound_detection.customized_sensitivity_level')"/>
+                <v-radio :disabled="!sound_detection_enabled" value="2">
+                  <div slot="label" :class="{'black--text': sound_detection_enabled}">{{ $t("sound_detection.customized_sensitivity_level") }}</div>
+                </v-radio>
               </v-flex>
               <v-flex xs5 offset-xs1>
                 <v-slider :disabled="!sound_detection_enabled" v-model="customized_sensitivity_level" thumb-label="always" :thumb-size="24"/>

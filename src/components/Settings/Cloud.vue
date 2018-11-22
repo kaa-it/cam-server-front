@@ -26,14 +26,14 @@
                 <v-divider class="mb-3"/>
                 <i18n path="cloud.cloud_info3" tag="p">
                   <a place="account" :href="$t('cloud.account_url')" target="_blank">{{ $t("cloud.account") }}</a>
-                </i18n>  
+                </i18n>
               </v-card-text>
               <v-card-actions>
                 <v-spacer/>
                 <v-btn color="primary" flat @click="dialog = false">Ok</v-btn>
-              </v-card-actions>  
+              </v-card-actions>
             </v-card>
-          </v-dialog>         
+          </v-dialog>
         </v-badge>
       </v-flex>
       <v-flex xs12 sm7>
@@ -52,8 +52,8 @@
                 </v-avatar>
                 {{ main_connected ? $t("cloud.enabled") : $t("cloud.disabled") }}
               </v-chip>
-              <v-spacer/>  
-            </v-flex>  
+              <v-spacer/>
+            </v-flex>
             <v-flex d-flex xs6>
               <v-select class="px-3" :label="$t('cloud.sub_stream')" :items="streams" v-model="sub_stream"/>
             </v-flex>
@@ -64,9 +64,9 @@
                 </v-avatar>
                 {{ sub_connected ? $t("cloud.enabled") : $t("cloud.disabled") }}
               </v-chip>
-              <v-spacer/>  
-            </v-flex>  
-          </v-layout>    
+              <v-spacer/>
+            </v-flex>
+          </v-layout>
         </v-card>
       </v-flex>
       <v-flex xs12 sm7>
@@ -101,7 +101,7 @@
             </v-flex>
           </v-layout>
         </v-card>
-      </v-flex>    
+      </v-flex>
     </v-layout>
   </v-container>
 </template>
@@ -123,8 +123,7 @@ export default {
       sub_connected: false,
       login: "",
       password: "",
-      camera_name: "Camera C8:6C:1E:01:2C:5A",
-       
+      camera_name: "Camera C8:6C:1E:01:2C:5A"
     };
   }
 };

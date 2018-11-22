@@ -16,13 +16,17 @@
             <v-radio-group class="px-3" v-model="radioGroup">
               <v-layout row wrap align-center>
               <v-flex xs6>
-                <v-radio :disabled="!motion_detection_enabled" value="1" :label="$t('motion_detection.sensitivity_level')"/>
+                <v-radio :disabled="!motion_detection_enabled" value="1">
+                  <div slot="label" :class="{'black--text': motion_detection_enabled}">{{ $t("motion_detection.sensitivity_level") }}</div>
+                </v-radio>
               </v-flex>
               <v-flex xs5 offset-xs1>
                 <v-select :disabled="!motion_detection_enabled" :items="sensitivity_levels" v-model="current_sensitivity_level"/>
               </v-flex>
               <v-flex xs6>
-                <v-radio :disabled="!motion_detection_enabled" value="2" :label="$t('motion_detection.customized_sensitivity_level')"/>
+                <v-radio :disabled="!motion_detection_enabled" value="2">
+                  <div slot="label" :class="{'black--text': motion_detection_enabled}">{{ $t("motion_detection.customized_sensitivity_level") }}</div>
+                </v-radio>
               </v-flex>
               <v-flex xs5 offset-xs1>
                 <v-slider :disabled="!motion_detection_enabled" v-model="customized_sensitivity_level" thumb-label="always" :thumb-size="24"/>
@@ -30,7 +34,7 @@
               </v-layout>
             </v-radio-group>
             <v-flex xs12>
-              <v-subheader class="px-3">{{ $t("motion_detection.region_of_interest") }}</v-subheader>
+              <v-subheader class="px-3 black--text">{{ $t("motion_detection.region_of_interest") }}</v-subheader>
             </v-flex>
             <v-flex xs12>
               <v-btn :disabled="!motion_detection_enabled" class="px-3" round color="purple">{{ $t("motion_detection.select_all") }}</v-btn>
