@@ -218,10 +218,24 @@ export default {
     rtsp_auth: "Авторизация RTSP"
   },
   ftp: {
-    title: "Настройки FTP"
+    title: "Настройки FTP",
+    common_card_title: "Общие настройки",
+    ftp_server: "FTP сервер",
+    ftp_port: "FTP порт",
+    login: "Логин",
+    password: "Пароль",
+    ftp_upload_path: "Директория для загрузки"
   },
   smtp: {
-    title: "Настройки SMTP"
+    title: "Настройки SMTP",
+    common_card_title: "Общие настройки",
+    account_name: "Имя учетной записи",
+    password: "Пароль",
+    sender_email: "Адрес отправителя",
+    smtp_server: "SMTP сервер",
+    security: "Безопасность",
+    smtp_port: "SMTP порт",
+    receiver_email: "Адрес получателя"
   },
   identification: {
     title: "Справка"

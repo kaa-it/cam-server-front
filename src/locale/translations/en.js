@@ -217,10 +217,24 @@ export default {
     rtsp_auth: "RTSP authentication"
   },
   ftp: {
-    title: "FTP Settings"
+    title: "FTP Settings",
+    common_card_title: "Common settings",
+    ftp_server: "FTP server",
+    ftp_port: "FTP port",
+    login: "Login",
+    password: "Password",
+    ftp_upload_path: "FTP upload path"
   },
   smtp: {
-    title: "SMTP Settings"
+    title: "SMTP Settings",
+    common_card_title: "Common settings",
+    account_name: "Account name",
+    password: "Password",
+    sender_email: "Sender email",
+    smtp_server: "SMTP server",
+    security: "Security",
+    smtp_port: "SMTP port",
+    receiver_email: "Receiver email"
   },
   identification: {
     title: "Identification"
