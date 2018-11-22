@@ -264,6 +264,7 @@ export default {
   },
   camera_log: {
     title: "Camera log",
+    common_card_title: "Common settings",
     log_level: "Log level",
     system_log: "System log",
     access_log: "Access log",

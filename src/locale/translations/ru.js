@@ -265,6 +265,7 @@ export default {
   },
   camera_log: {
     title: "Системный журнал",
+    common_card_title: "Общие настройки",
     log_level: "Уровень логирования",
     system_log: "Системный журнал",
     access_log: "Журнал доступа",
