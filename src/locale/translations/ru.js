@@ -261,7 +261,26 @@ export default {
     title: "Управление дисками"
   },
   maintenance: {
-    title: "Обслуживание"
+    title: "Обслуживание",
+    common_card_title: "Общие настройки",
+    auxilary_card_title: "Дополнительно",
+    upgrading_card_title: "Обновление ПО",
+    reboot_device: "Перезагрузка устройства",
+    reboot: "Перезагрузить",
+    soft_factory_reset: "Частичный сброс к заводским настройкам",
+    hard_factory_reset: "Полный сброс к заводским настройкам",
+    backup_firmware: "Восстановление прошивки",
+    backup: "Восстановить",
+    reset: "Сброс",
+    start: "Запустить",
+    run_wiper: "Стеклоочиститель",
+    washing: "Промывка",
+    autoclean: "Автоочистка",
+    autoclean_interval: "Интервал автоочистки, часов",
+    no_file_choosen: "Файл не выбран",
+    upgrade_file: "Файл обновления",
+    choose_file: "Выбрать файл",
+    upgrade: "Обновить"
   },
   camera_log: {
     title: "Системный журнал",

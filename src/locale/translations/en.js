@@ -260,7 +260,26 @@ export default {
     title: "Disk Management"
   },
   maintenance: {
-    title: "Maintenance"
+    title: "Maintenance",
+    common_card_title: "Common settings",
+    auxilary_card_title: "Auxilary",
+    upgrading_card_title: "Upgrading firmware",
+    reboot_device: "Reboot device",
+    reboot: "Reboot now",
+    soft_factory_reset: "Soft factory reset",
+    hard_factory_reset: "Hard factory reset",
+    backup_firmware: "Backup firmware",
+    backup: "Backup",
+    reset: "Reset",
+    start: "Start",
+    run_wiper: "Run wiper",
+    washing: "Washing procedure",
+    autoclean: "Autoclean",
+    autoclean_interval: "Autoclean interval, hours",
+    no_file_choosen: "No file choosen",
+    upgrade_file: "Upgrade file",
+    choose_file: "Choose file",
+    upgrade: "Upgrade"
   },
   camera_log: {
     title: "Camera log",
