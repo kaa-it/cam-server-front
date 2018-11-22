@@ -1,42 +1,52 @@
 <template>
-  <v-container fluid grid-list-xl>
+  <v-container fluid>
     <v-layout row wrap align-center>
       <v-flex d-flex xs12>
-        <h1>{{ $t("alarms.title") }}</h1>
+        <span class="headline font-weight-bold">{{ $t("alarms.title") }}</span>
       </v-flex>
       <v-flex xs12 sm7>
-        <v-card>
-          <v-card-title class="yellow darken-1 mb-2">
-            <h3 class="headline">{{ $t("alarms.trigger_card_title") }}</h3>
+        <v-card class="my-3">
+          <v-card-title class="yellow darken-1 mb-3">
+            <span class="title">{{ $t("alarms.trigger_card_title") }}</span>
           </v-card-title>
           <v-layout row wrap align-center>
             <v-flex d-flex xs12>
-              <v-checkbox class="px-3" :label="$t('alarms.motion_detection')" v-model="motion_detection"/>
+              <v-checkbox class="px-3" v-model="motion_detection">
+                <div slot="label" class="black--text">{{ $t("alarms.motion_detection") }}</div>
+              </v-checkbox>
             </v-flex>
             <v-flex d-flex xs12>
-              <v-checkbox class="px-3" :label="$t('alarms.network_connection_lost')" v-model="connection_lost"/>
+              <v-checkbox class="px-3" v-model="connection_lost">
+                <div slot="label" class="black--text">{{ $t("alarms.network_connection_lost") }}</div>
+              </v-checkbox>
             </v-flex>
             <v-flex d-flex xs12>
-              <v-checkbox class="px-3" :label="$t('alarms.audio_alarm')" v-model="audio_alarm"/>
+              <v-checkbox class="px-3" v-model="audio_alarm">
+                <div slot="label" class="black--text">{{ $t("alarms.audio_alarm") }}</div>
+              </v-checkbox>
             </v-flex>
             <v-flex d-flex xs12>
-              <v-checkbox class="px-3" :label="$t('alarms.external_triggers')" v-model="external_triggers"/>
-            </v-flex>        
+              <v-checkbox class="px-3" v-model="external_triggers">
+                <div slot="label" class="black--text">{{ $t("alarms.external_triggers") }}</div>
+              </v-checkbox>
+            </v-flex>
           </v-layout>
-        </v-card>    
+        </v-card>
       </v-flex>
       <v-flex xs12 sm7>
         <v-card>
-          <v-card-title class="yellow darken-1 mb-2">
-            <h3 class="headline">{{ $t("alarms.action_card_title") }}</h3>
+          <v-card-title class="yellow darken-1 mb-3">
+            <span class="title">{{ $t("alarms.action_card_title") }}</span>
           </v-card-title>
           <v-layout row wrap align-center>
             <v-flex d-flex xs12>
-              <v-checkbox class="px-3" :label="$t('alarms.activate_output_relay')" v-model="activate_output_relay"/>
-            </v-flex>  
+              <v-checkbox class="px-3" v-model="activate_output_relay">
+                <div slot="label" class="black--text">{{ $t("alarms.activate_output_relay") }}</div>
+              </v-checkbox>
+            </v-flex>
           </v-layout>
-        </v-card>    
-      </v-flex>    
+        </v-card>
+      </v-flex>
     </v-layout>
   </v-container>
 </template>
