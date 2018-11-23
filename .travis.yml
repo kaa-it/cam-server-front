@@ -1,11 +1,23 @@
 language: node_js
+sudo: required
+dist: xenial
 node_js:
   - 10.13.0
+
 cache:
   npm: true
   directories:
     - ~/.cache
+
 install:
   - npm ci
+
+before_script:
+  - export CHROME_BIN=/usr/bin/google-chrome
+  - sudo apt update
+  - sudo apt install -y libappindicator1 fonts-liberation
+  - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+  - sudo dpkg -i google-chrome*.deb
+
 script:
   - $(npm bin)/cypress run --record --key 80c8a3d9-0fd2-439c-85b6-3079874b8b17 
