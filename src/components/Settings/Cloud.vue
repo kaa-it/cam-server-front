@@ -5,14 +5,13 @@
         <span class="headline font-weight-bold mb-3"> {{ $t("cloud.title") }}</span>
       </v-flex>
       <v-flex xs12 sm7>
-        <v-badge color="red" class="mb-3">
-          <span slot="badge">!</span>
-          <v-dialog v-model="dialog" width="500">
-            <v-btn slot="activator" color="green lighten-2" dark round>
+        <v-dialog v-model="dialog" width="500">
+            <v-btn slot="activator" color="accent" round>
               {{ $t("cloud.about_cloud_service") }}
+              <v-icon right>info</v-icon>
             </v-btn>
             <v-card>
-              <v-card-title class="headline grey lighten-2" primary-title>
+              <v-card-title class="headline secondary white--text">
                 {{ $t("cloud.cloud_service") }}
               </v-card-title>
               <v-card-text>
@@ -34,11 +33,10 @@
               </v-card-actions>
             </v-card>
           </v-dialog>
-        </v-badge>
       </v-flex>
       <v-flex xs12 sm7>
-        <v-card class="mb-3">
-          <v-card-title class="yellow darken-1 mb-3">
+        <v-card class="my-3">
+          <v-card-title class="secondary white--text mb-3">
             <span class="title">{{ $t("cloud.streams_card_title") }}</span>
           </v-card-title>
           <v-layout row wrap align-center>
@@ -46,7 +44,7 @@
               <v-select class="px-3" :label="$t('cloud.main_stream')" :items="streams" v-model="main_stream"/>
             </v-flex>
             <v-flex d-flex xs3>
-              <v-chip :color="statusColor(main_stream_status)" text-color="white" disabled small>
+              <v-chip outline color="secondary" :text-color="statusColor(main_stream_status)" disabled small>
                 <v-avatar>
                   <v-icon>{{ statusIcon(main_stream_status) }}</v-icon>
                 </v-avatar>
@@ -58,7 +56,7 @@
               <v-select class="px-3" :label="$t('cloud.sub_stream')" :items="streams" v-model="sub_stream"/>
             </v-flex>
             <v-flex d-flex xs3>
-              <v-chip :color="statusColor(sub_stream_status)" text-color="white" disabled small>
+              <v-chip outline color="secondary" :text-color="statusColor(sub_stream_status)" disabled small>
                 <v-avatar>
                   <v-icon>{{ statusIcon(sub_stream_status) }}</v-icon>
                 </v-avatar>
@@ -71,7 +69,7 @@
       </v-flex>
       <v-flex xs12 sm7>
         <v-card class="pb-3">
-          <v-card-title class="yellow darken-1 mb-3">
+          <v-card-title class="secondary white--text mb-3">
             <span class="title">{{ $t("cloud.cloud_auth_card_title") }}</span>
           </v-card-title>
           <v-layout row wrap align-center grid-list-xs>
@@ -94,10 +92,13 @@
               <v-text-field class="px-3" v-model="camera_name" />
             </v-flex>
             <v-flex d-flex xs12 sm6>
-              <v-btn round color="primary" dark>{{ $t("cloud.add_camera") }}</v-btn>
+              <v-btn round color="accent">{{ $t("cloud.add_camera") }}</v-btn>
             </v-flex>
             <v-flex d-flex xs12 sm6>
-              <v-btn round color="primary" dark>{{ $t("cloud.run_module") }}</v-btn>
+              <v-btn round color="accent">{{ $t("cloud.run_module") }}</v-btn>
+            </v-flex>
+            <v-flex d-flex xs12 sm6>
+              <p><a href="https://vuetifyjs.com/ru/style/colors">Colors</a></p>
             </v-flex>
           </v-layout>
         </v-card>
@@ -121,6 +122,8 @@ export default {
       sub_stream: "H.264 (1280x720)",
       status: ["disabled", "offline", "waiting", "online"],
       main_stream_status: "offline",
+      main_index: 1,
+      sub_index: 0,
       sub_stream_status: "disabled",
       login: "",
       password: "",
@@ -131,13 +134,13 @@ export default {
     statusColor(status) {
       switch (status) {
         case "disabled":
-          return "brown lighten-1";
+          return "grey";
         case "offline":
-          return "blue lighten-1";
+          return "pink lighten-1";
         case "waiting":
           return "orange lighten-1";
         case "online":
-          return "light-green lighten-1";
+          return "green accent-4";
       }
     },
     statusIcon(status) {
@@ -152,6 +155,25 @@ export default {
           return "check_circle_outline";
       }
     }
+  },
+  mounted() {
+    setInterval(() => {
+      this.main_index++;
+
+      if (this.main_index == 4) {
+        this.main_index = 0;
+      }
+
+      this.main_stream_status = this.status[this.main_index];
+
+      this.sub_index++;
+
+      if (this.sub_index == 4) {
+        this.sub_index = 0;
+      }
+
+      this.sub_stream_status = this.status[this.sub_index];
+    }, 2000);
   }
 };
 </script>

@@ -11,6 +11,11 @@ Vue.use(Vuetify, {
   lang: {
     locales: { en, ru },
     current: "en"
+  },
+  theme: {
+    primary: "#1976D2",
+    secondary: "#42A5F5",
+    accent: "#E91E63"
   }
 });
 
